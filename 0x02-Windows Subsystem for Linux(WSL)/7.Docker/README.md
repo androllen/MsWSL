@@ -1,5 +1,4 @@
-
-
+![](https://github.com/androllen/WeWSL/blob/master/0x02-Windows%20Subsystem%20for%20Linux(WSL)/7.Docker/Assets/bg2018020901.png)
 
 ### Docker安装
 1. sudo apt-get update
@@ -18,18 +17,39 @@
 1. sudo apt-get update
 1. sudo apt-get install docker-ce docker-ce-cli containerd.io
 1. docker version    
+### Uninstall Docker CE
 
 ### Docker 服务命令
 * 开启  
 sudo service docker start
-* 查看状态
+* 查看状态  
 sudo service docker status
-* 开机自启动
+* 开机自启动  
 sudo systemctl enable docker
-* 查看开机自启动状态
+* 查看开机自启动状态  
 sudo systemctl is-enabled docker
+* 禁用开机自启  
+sudo systemctl disable docker
+
+### Docker 三大组件
+#### image 文件
+```Docker 把应用程序及其依赖，打包在 image 文件里面。```
+* 列出本机的所有 image 文件。  
+$ docker image ls
+
+* 删除 image 文件  
+$ docker image rm [imageName]
+
+#### container 文件
+```image 文件生成的容器实例，本身也是一个文件，称为容器文件。也就是说，一旦容器生成，就会同时存在两个文件： image 文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。```
+* 列出本机正在运行的容器  
+$ docker container ls
+
+* 列出本机所有容器，包括终止运行的容器  
+$ docker container ls --all
 
 
+#### image文件
 
 http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html
 https://zhuanlan.zhihu.com/p/58436705
@@ -47,6 +67,8 @@ https://blog.csdn.net/wxb880114/article/details/82904765
 https://blog.csdn.net/qq_28295425/article/details/86537124
 https://blog.csdn.net/HOOKTTG/article/details/80626369
 
+
+https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
 使用 Docker 在 Linux 上托管 flask
 Linux开启启动Docker
 sudo chkconfig docker on 
@@ -68,4 +90,4 @@ sudo chkconfig docker on
 * Manage Docker as a non-root user
     * sudo groupadd docker
     * sudo usermod -aG docker $USER
-    
+    * docker run hello-world
