@@ -4,7 +4,7 @@ Linux flask xshell xftp supervisor ssh python virtualenv virtualenvwrapper
 ### 目标
 1. 创建Flask web项目
    * Flask 教程
-1. Windows Subsystem for Linux(WSL)
+1. Windows Subsystem for Linux(WSL 18.04 TLS)
    * 安装 WSL
    * WSL 系统命令
    * WSL Vim 编辑命令
