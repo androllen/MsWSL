@@ -22,6 +22,8 @@
 6. sudo apt-get update
 7. sudo apt-get install docker-ce docker-ce-cli containerd.io
 8. docker version    
+### Docker 源
+
 ### Uninstall Docker CE
 
 ### Docker 服务命令
@@ -52,7 +54,11 @@ $ docker container ls
 
 * 列出本机所有容器，包括终止运行的容器  
 $ docker container ls --all
-
+#### Registry
+```
+Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库。
+```
+Dockerfile 
 
 #### image文件
 
