@@ -1,22 +1,27 @@
-![](https://github.com/androllen/WeWSL/blob/master/0x02-Windows%20Subsystem%20for%20Linux(WSL)/7.Docker/Assets/bg2018020901.png)
+
+<p align="center">
+<img width="200" align="center" src="Assets/bg2018020901.png"/>
+</p>
+<h1 align="center">Docker入门教程</h1>
+## 目录
 
 ### Docker安装
 1. sudo apt-get update
-1. sudo apt-get install \
+2. sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
     gnupg-agent \
     software-properties-common
-1. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-1. sudo apt-key fingerprint 0EBFCD88
-1. sudo add-apt-repository \
+3. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+4. sudo apt-key fingerprint 0EBFCD88
+5. sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
-1. sudo apt-get update
-1. sudo apt-get install docker-ce docker-ce-cli containerd.io
-1. docker version    
+6. sudo apt-get update
+7. sudo apt-get install docker-ce docker-ce-cli containerd.io
+8. docker version    
 ### Uninstall Docker CE
 
 ### Docker 服务命令
@@ -80,7 +85,7 @@ sudo chkconfig docker on
 * Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running? 
 意思是说windows10子系统有其特殊性，需要安装docker for windows，这个就是docker daemon，然后打开如下选项：
 然后，执行“docker -H tcp://0.0.0.0:2375 info”就可以返回docker信息了。但是这样很麻烦，所以可执行如下操作
-![docker](https://github.com/androllen/WeWSL/blob/master/0x02-Windows%20Subsystem%20for%20Linux(WSL)/7.Docker/Assets/20180608175713938.jpg)
+![docker](Assets/20180608175713938.jpg)
 
 1、“echo "export DOCKER_HOST='tcp://0.0.0.0:2375'" >> ~/.bashrc”
 

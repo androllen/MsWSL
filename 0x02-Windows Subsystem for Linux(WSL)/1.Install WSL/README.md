@@ -1,22 +1,22 @@
 ### 安装WSL
-####1. 命令行启用WSL
+#### 命令行启用WSL
 > 用管理员方式打开PowerShell 然后运行如下命令
 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ![](Assets/Snipaste_2019-05-14_10-24-00.png)
 
-####2. 控制面板启用WSL
+#### 控制面板启用WSL
 > 通过Cortana搜索【控制面板】进入到【程序】=> 【启用或关闭windows功能】=> 勾选【适用于Linux的Windows子系统】
 
 ![](Assets/Snipaste_2019-05-14_10-24-01.png)
 
-####3. 安装WSL
+#### 安装WSL
 > 使用win10自带的Microsoft Store应用商店搜索WSL，然后选择自己想要安装的Linux发行版。点击获取，就会自动开始在win10中下载,WSL只能安装在C盘里面
 
 
 ![](Assets/Snipaste_2019-05-14_10-37-04.png)
 
-####4. 打开WSL
+#### 打开WSL
 首次打开后会提示正在安装......
 接着会让配置用户和密码
 
@@ -25,7 +25,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 ![](Assets/Snipaste_2019-05-14_10-46-28.png)
 
 
-####5. 使用wslconfig命令
+#### 使用wslconfig命令
 ```
 # 设置默认运行的linux系统
 wslconfig /setdefault 正如上面所说，如果执行wslconfig /setdefault ubuntu，那么执行bash命令则会运行ubuntu
