@@ -6,7 +6,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 ![](Assets/Snipaste_2019-05-14_10-24-00.png)
 
 #### 控制面板启用WSL
-> 通过Cortana搜索【控制面板】进入到【程序】=> 【启用或关闭windows功能】=> 勾选【适用于Linux的Windows子系统】
+> 控制面板\程序\程序和功能
 
 ![](Assets/Snipaste_2019-05-14_10-24-01.png)
 
