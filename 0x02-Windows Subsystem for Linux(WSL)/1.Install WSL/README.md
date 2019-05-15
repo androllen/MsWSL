@@ -10,13 +10,13 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 ![](Assets/Snipaste_2019-05-14_10-24-01.png)
 
-#### 安装WSL
+#### [安装WSL](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10)
 > 使用win10自带的Microsoft Store应用商店搜索WSL，然后选择自己想要安装的Linux发行版。点击获取，就会自动开始在win10中下载,WSL只能安装在C盘里面
 
 
 ![](Assets/Snipaste_2019-05-14_10-37-04.png)
 
-#### 打开WSL
+#### [打开WSL](https://docs.microsoft.com/zh-cn/windows/wsl/initialize-distro)
 首次打开后会提示正在安装......
 接着会让配置用户和密码
 

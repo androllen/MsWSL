@@ -93,4 +93,4 @@ $username ALL=(ALL) NOPASSWD: /usr/sbin/service
 
 
 [wslvbs-id]: Assets/startWSL.vbs
-[taskvbs-id]: Assets/AutoService.vbs
+[taskvbs-id]: Assets/AutoService.xml

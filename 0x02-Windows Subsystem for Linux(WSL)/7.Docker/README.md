@@ -3,9 +3,16 @@
 <img width="200" align="center" src="Assets/bg2018020901.png"/>
 </p>
 <h1 align="center">Docker入门教程</h1>
+
 ## 目录
+### [Docker简介](https://docs.microsoft.com/zh-cn/dotnet/standard/containerized-lifecycle-architecture/what-is-docker)
+
+
+
+### Docker配置
 
 ### Docker安装
+* 在线下载
 1. sudo apt-get update
 2. sudo apt-get install \
     apt-transport-https \
@@ -21,7 +28,17 @@
    stable"
 6. sudo apt-get update
 7. sudo apt-get install docker-ce docker-ce-cli containerd.io
-8. docker version    
+8. docker version   
+ 
+* 离线下载<https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64/>
+    > 把下载的文件放到用户名目录下查看
+```
+# 客户端
+sudo dpkg -i containerd.io_1.2.5-1_amd64.deb
+sudo dpkg -i docker-ce_18.09.6_3-0_ubuntu-bionic_amd64.deb
+sudo dpkg -i docker-ce-cli_18.09.6_3-0_ubuntu-bionic_amd64.deb
+```
+
 ### Docker 源
 
 ### Uninstall Docker CE
@@ -67,7 +84,7 @@ https://zhuanlan.zhihu.com/p/58436705
 https://download.docker.com/linux/ubuntu/dists/
 https://www.cnblogs.com/kaixinyufeng/p/9389348.html
 
-https://blog.csdn.net/HOOKTTG/article/details/80626369
+
 docker之安装和基本使用(一)
 https://www.cnblogs.com/cwp-bg/p/9365983.html
 https://www.cnblogs.com/cwp-bg/p/9376130.html
@@ -76,7 +93,7 @@ https://blog.csdn.net/li_yan_sring/article/details/84408701
 https://www.cnblogs.com/cwp-bg/p/9376130.html
 https://blog.csdn.net/wxb880114/article/details/82904765
 https://blog.csdn.net/qq_28295425/article/details/86537124
-https://blog.csdn.net/HOOKTTG/article/details/80626369
+
 
 
 https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
@@ -88,7 +105,7 @@ sudo chkconfig docker on
 [download.docker.com for Windows](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe)
 
 ### 问题
-* Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running? 
+* Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running? <https://blog.csdn.net/HOOKTTG/article/details/80626369>
 意思是说windows10子系统有其特殊性，需要安装docker for windows，这个就是docker daemon，然后打开如下选项：
 然后，执行“docker -H tcp://0.0.0.0:2375 info”就可以返回docker信息了。但是这样很麻烦，所以可执行如下操作
 ![docker](Assets/20180608175713938.jpg)
