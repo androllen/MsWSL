@@ -1,12 +1,10 @@
 Supervisor
-* 介绍
-    在linux或者unix操作系统中，守护进程（Daemon）是一种运行在后台的特殊进程，它独立于控制终端并且周期性的执行某种任务或等待处理某些发生的事件。
-* 应用场景
+* 介绍  
+    在linux或者unix操作系统中，守护进程（Daemon）是一种运行在后台的特殊进程，它独立于控制终端并且周期性的执行某种任务或等待处理某些发生的事件。  
+    > Supervisord是supervisor的服务端程序。运行 Supervisor 时会启动一个进程 supervisord，它负责启动所管理的进程，并将所管理的进程作为自己的子进程来启动，而且可以在所管理的进程出现崩溃时自动重启。
+    > Supervisorctl 是命令行管理工具，可以用来执行 stop、start、restart 等命令，来对这些子进程进行管理。
+* 应用场景   
     应用在dotnet & python 等
-
-> Supervisord是supervisor的服务端程序。运行 Supervisor 时会启动一个进程 supervisord，它负责启动所管理的进程，并将所管理的进程作为自己的子进程来启动，而且可以在所管理的进程出现崩溃时自动重启。
-> Supervisorctl 是命令行管理工具，可以用来执行 stop、start、restart 等命令，来对这些子进程进行管理。
-> Supervisor
 
 * 环境：Ubuntu 18 
 
@@ -112,7 +110,7 @@ Supervisor
     ```
 
 
-* 问题
+* 问题  
     1.Error: Another program is already listening on a port that one of our HTTP servers is configured to use.   
     Shut this program down first before starting supervisord.  
     For help, use /usr/bin/supervisord -h  
@@ -128,3 +126,4 @@ Supervisor
     http://supervisord.org/  
     http://supervisord.org/configuration.html#program-x-section-settings  
     https://blog.csdn.net/u013421629/article/details/79174313  
+

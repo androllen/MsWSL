@@ -86,8 +86,8 @@
 * 重启Windows
 
 #### 相关连接
-<https://hbaaron.github.io/blog_2017/%E5%9C%A8wsl%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8sshd%E5%85%A8%E6%94%BB%E7%95%A5/>
-<https://blog.csdn.net/tengchengbaba/article/details/85481145>
+[在wsl下安装使用sshd全攻略](https://hbaaron.github.io/blog_2017/%E5%9C%A8wsl%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8sshd%E5%85%A8%E6%94%BB%E7%95%A5)
+[使用xshell登陆](https://blog.csdn.net/tengchengbaba/article/details/85481145)
 
 
 

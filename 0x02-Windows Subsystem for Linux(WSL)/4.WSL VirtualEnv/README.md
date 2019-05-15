@@ -24,12 +24,11 @@
     deactivate
     ```
 
-* 安装Virtualenvwrapper
-    sudo apt-get install virtualenvwrapper
-* 在任意目录创建 .virtualenvs （建议在 用户 根目录下）
-    androllen@DESKTOP-QKA9IF0:~$ mkdir .virtualenvs 
-
-    androllen@DESKTOP-QKA9IF0:~$ mkdir $HOME/.virtualenvs
+* 安装Virtualenvwrapper  
+    sudo apt-get install virtualenvwrapper  
+* 在任意目录创建 .virtualenvs （建议在 用户 根目录下）  
+    androllen@DESKTOP-QKA9IF0:~$ mkdir .virtualenvs   
+    androllen@DESKTOP-QKA9IF0:~$ mkdir $HOME/.virtualenvs  
     ~~~~# 查找virtualenvwrapper.sh路径~~~~
     ~~~~sudo find / -type f -mount -name virtualenvwrapper.sh~~~~
 
@@ -46,7 +45,7 @@
     ~~~~# 运行命令~~~~
     ~~~~source ~/.profile~~~~
 
-* virtualenvwrapper 命令
+* virtualenvwrapper 命令  
     创建虚拟环境：mkvirtualenv new_env 
 
     使用虚拟环境：workon new_env
