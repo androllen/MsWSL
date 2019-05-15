@@ -1,6 +1,6 @@
 
 <p align="center">
-<img width="200" align="center" src="Assets/bg2018020901.png"/>
+<img width="250" align="center" src="Assets/bg2018020901.png"/>
 </p>
 <h1 align="center">Docker入门教程</h1>
 
@@ -14,6 +14,8 @@
     [下载地址](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe)  
     客户端和docker通信，必须打开以下黄色背景的选项  
     ![](Assets/Snipaste_2019-05-15_19-25-37.png)
+
+### Docker 更换源
 
 ### 在WSL上安装 Docker 
 * 在线下载
@@ -44,7 +46,6 @@
     sudo dpkg -i docker-ce-cli_18.09.6_3-0_ubuntu-bionic_amd64.deb
     ```
 
-### Docker 更换源
 
 ### Docker 服务命令
 
