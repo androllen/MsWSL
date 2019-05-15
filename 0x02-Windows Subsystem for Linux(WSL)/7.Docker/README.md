@@ -110,11 +110,12 @@ sudo chkconfig docker on
 然后，执行“docker -H tcp://0.0.0.0:2375 info”就可以返回docker信息了。但是这样很麻烦，所以可执行如下操作
 ![docker](Assets/20180608175713938.jpg)
 
-1、“echo "export DOCKER_HOST='tcp://0.0.0.0:2375'" >> ~/.bashrc”
-
-2、“source ~/.bashrc”
-
+```
+echo "export DOCKER_HOST='tcp://0.0.0.0:2375'" >> ~/.bashrc
+source ~/.bashrc
+```
 然后就可以直接执行“docker info”了。
+
 * Manage Docker as a non-root user
     * sudo groupadd docker
     * sudo usermod -aG docker $USER
