@@ -58,7 +58,16 @@ sudo systemctl enable docker
 sudo systemctl is-enabled docker
 * 禁用开机自启  
 sudo systemctl disable docker
+* 启动docker
+sudo systemctl start docker
 * 卸载docker
+sudo apt-get purge docker-ce
+* 在你主机删除所有映像 容器 卷或者自定义配置文件
+sudo rm -rf /var/lib/docker
+* Linux开启启动Docker
+sudo chkconfig docker on
+* 开机docker 自动配置开启，如果想禁用此行为
+echo manual | sudo tee /etc/init/docker.override
 
 
 ### [Docker 三大组件](https://docs.microsoft.com/zh-cn/dotnet/standard/containerized-lifecycle-architecture/docker-containers-images-and-registries)
@@ -137,5 +146,3 @@ https://docs.microsoft.com/zh-cn/dotnet/standard/containerized-lifecycle-archite
 
 https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
 使用 Docker 在 Linux 上托管 flask
-Linux开启启动Docker
-sudo chkconfig docker on 
