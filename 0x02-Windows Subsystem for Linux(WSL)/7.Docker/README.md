@@ -97,9 +97,12 @@ echo manual | sudo tee /etc/init/docker.override
     ```
     # 列出本机正在运行的容器  
     $ docker container ls
-
     # 列出本机所有容器，包括终止运行的容器  
     $ docker container ls --all
+    # 对于那些不会自动终止的容器手动终止
+    $ docker container kill [containID]
+    # 对于那些不会自动终止的容器手动删除
+    $ docker container rm [containerID]
     ```
 
 * Registry
@@ -108,11 +111,16 @@ echo manual | sudo tee /etc/init/docker.override
 * 存储库 (repo)
     > 相关的 Docker 映像集合，带有指示映像版本的标记。 某些存储库包含特定映像的多个变量，例如包含 SDK（较重）的映像，包含唯一运行时（较轻）的映像，等等。这些变量可以使用标记进行标记。 单个存储库中可包含平台变量，如 Linux 映像和 Windows 映像。
 
-* Dockerfile
+* Dockerfile (制作 image)
     包含有关如何生成 Docker 映像的说明的文本文件。 就像批处理脚本、 第一行说明从开始，然后按照说明安装所需的程序，复制文件的基本映像，而你需要依此类推，直到获取工作环境。
 
-### 使用 Docker 在 Linux 上托管 flask
-
+### 制作自己的 Docker 容器(使用 Docker 在 Linux 上托管 flask)
+* 编写 Dockerfile 文件  
+    怎么写 Dockerfile 文件，实现让用户在 Docker 容器里面运行 Flask 框架。
+### 安装docker UI
+    Portainer是Docker的图形化管理工具，提供状态显示面板、应用模板快速部署、容器镜像网络数据卷的基本操作（包括上传下载镜像，创建容器等操作）、事件日志显示、容器控制台操作、Swarm集群和服务等集中管理和操作、登录用户管理和控制等功能。功能十分全面，基本能满足中小型单位对容器管理的全部需求。
+    [官网地址](https://www.portainer.io)
+    [安装](https://www.portainer.io/installation/)
 
 #### 问题
 1. Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running? <https://blog.csdn.net/HOOKTTG/article/details/80626369>
@@ -140,6 +148,9 @@ source ~/.bashrc
 
     https://www.cnblogs.com/kaixinyufeng/p/9389348.html
 
+    https://www.cnblogs.com/clsn/p/8410309.html
+
+    https://www.runoob.com/docker/ubuntu-docker-install.html
 
     docker之安装和基本使用(一)
     https://www.cnblogs.com/cwp-bg/p/9365983.html
