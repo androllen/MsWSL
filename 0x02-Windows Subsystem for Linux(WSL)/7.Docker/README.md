@@ -1,6 +1,6 @@
 
 <p align="center">
-<img width="250" align="center" src="Assets/bg2018020901.png"/>
+<img width="400" align="center" src="Assets/bg2018020901.png"/>
 </p>
 <h1 align="center">Docker入门教程</h1>
 
@@ -27,7 +27,7 @@
     https://zhuanlan.zhihu.com/p/58436705
 
     https://download.docker.com/linux/ubuntu/dists/
-
+    https://www.zhihu.com/question/48174633
     https://www.cnblogs.com/kaixinyufeng/p/9389348.html
 
     https://www.cnblogs.com/clsn/p/8410309.html
