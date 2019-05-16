@@ -51,10 +51,9 @@
     cmd = "C:\Windows\System32\bash.exe -c 'sudo /usr/sbin/service ssh start'"
     ws.run cmd,0
     ```
-    1. Win + R 
-    2. cmd
-    3. cd %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
-    4. 将上面的脚本，保存为 startWSL.vbs
+
+    1. cd %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
+    1. 将上面的脚本，保存为 startWSL.vbs
 
     > 上述脚本存在一个问题，就是执行sudo时，会提示输入密码，而这时又无法拿到用户的输入。要解决这一问题，需要允许sudo在没有密码的情况下执行命令。我们需要借助windows计划任务和脚本，使得在windows启动时自动运行这一服务。
 
@@ -65,11 +64,10 @@
     ```
     这里的$username即wsl子系统中的一个用户名。我使用了安装wsl时给出的一个用户名
 
-    1. Win + R 
-    2. cmd  
-    3. cd AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\etc
-    4. start .
-    5. 将上面的脚本,插入至 sudoers
+  
+    1. cd C:\Users\%USERNAME%\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\etc
+    1. start .
+    1. 将上面的脚本,插入至 sudoers
 
 
 * 打开任务计划程序
