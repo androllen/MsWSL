@@ -55,7 +55,8 @@
     1. cd %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
     1. 将上面的脚本，保存为 startWSL.vbs
 
-    > 上述脚本存在一个问题，就是执行sudo时，会提示输入密码，而这时又无法拿到用户的输入。要解决这一问题，需要允许sudo在没有密码的情况下执行命令。我们需要借助windows计划任务和脚本，使得在windows启动时自动运行这一服务。
+    > 上述脚本存在一个问题，就是执行sudo时，会提示输入密码，而这时又无法拿到用户的输入。要解决这一问题，需要允许sudo在没有密码的情况下执行命令。
+    > 我们需要借助windows计划任务和脚本，使得在windows启动时自动运行这一服务。
 
 * 添加 sudo 无密码权限：
     ```
