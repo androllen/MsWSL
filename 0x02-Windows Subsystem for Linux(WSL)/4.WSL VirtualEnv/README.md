@@ -48,7 +48,7 @@
 * virtualenvwrapper 命令  
     创建虚拟环境：mkvirtualenv new_env 
 
-    使用虚拟环境：workon new_env
+    激活虚拟环境：workon new_env
 
     退出虚拟环境：deactivate
 
@@ -56,5 +56,13 @@
 
     查看所有虚拟环境：lsvirtualenv
 
-    pip freeze > requirements.txt
-    pip install -r requirements.txt
+    ```
+    # 激活当前环境，导出和安装的环境文件
+    D:\Desktop\todolist>activate todoenv
+    (todoenv) D:\Desktop\todolist> pip freeze > requirements.txt
+    (todoenv) D:\Desktop\todolist> pip install -r requirements.txt
+    ```
+    
+* Anaconda 命令 
+* <https://www.cnblogs.com/hafiz/p/9085405.html>
+* <https://www.jianshu.com/p/52d848317c17>
