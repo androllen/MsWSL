@@ -18,10 +18,10 @@
     locate --basename vim
     ```
 
-* find 搜索文件夹和文件
+* find 搜索文件夹和文件  
     sudo find / -type d -mount -name supervisor 
 
-* ls 命令
+* ls 命令  
     蓝色：表示目录  
     绿色：表示可执行文件  
     红色：表示压缩文件   
@@ -30,6 +30,15 @@
     黄色：表示设备文件  
     灰色：表示其他文件  
 
-ctrl+a   ctrl+e   分别代表把管标移动到最前和最后
+* 创建文件夹  
+  mkdir + foo
 
-ctrl+u   ctrl+k   分别代表光标处往前和光标处往后删除    
+* 创建文件  
+    vi + foo  
+    touch + foo
+
+
+
+* 快捷键
+    > ctrl+a   ctrl+e   分别代表把管标移动到最前和最后  
+    > ctrl+u   ctrl+k   分别代表光标处往前和光标处往后删除    
