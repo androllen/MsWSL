@@ -15,3 +15,5 @@ https://code.visualstudio.com/docs/python/tutorial-flask
 https://www.tutorialspoint.com/flask/flask_routing.htm
 
 https://www.fullstackpython.com/flask.html
+
+https://read.helloflask.com/
