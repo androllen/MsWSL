@@ -1,4 +1,4 @@
-
+<!-- 
 <p align="center">
 <img width="400" align="center" src="Assets/2018-07-24_173001.png"/>
 <h2 align="center">搭建ShadowsocksR完整流程，看完你也会！SSR</h2>
@@ -21,9 +21,7 @@ SSR从本质上来说是一种加密代理方式，其服务端搭建在国外VP
 <br/>
 
 
-想了解更多基础知识可参考：  
-SSR简单介绍 帮助新手快速入门
-个人搭建SSR需要哪些条件？其实很简单！   
+想了解更多基础知识可参考：    
 [SSR简单介绍 帮助新手快速入门](01.HelpTiro.md)  
 [个人搭建SSR需要哪些条件？其实很简单！](02.Need.md)  
 #### ShadowSocksR搭建流程
@@ -45,9 +43,6 @@ Kcptun
 ##### 3.SSR客户端安装与连接
 目前SSR客户端，根据平台不同，版本也不同。有Windows版、安卓版、iOS版、MAC版、路由器版等供我们选择，可以说覆盖非常全面了。根据个人需求，下载对应版本安装即可。  
 SSR客户端下载地址及使用教程：[SSR各平台客户端下载汇总](06.DownloadSSR.md)
-
-https://www.vultrblog.com/vultr-ss.html
-https://www.cnblogs.com/blackay03/p/9065925.html
-https://www.vultrer.com/64.html
-https://adoncn.com/31050/
-<!-- https://ssr.tools -->
+ -->
+### ShadowsocksR 科学上网原理
+SSR从本质上来说是一种加密代理方式，其服务端搭建在国外VPS服务器上，客户端在用户终端设备上。服务器做为中间桥梁，使我们间接访问国外网站。同时由于是加密代理，防火墙无法识别访问内容，访问比较安全。  
