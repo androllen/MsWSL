@@ -1,0 +1,53 @@
+
+<p align="center">
+<img width="400" align="center" src="Assets/2018-07-24_173001.png"/>
+<h2 align="center">搭建ShadowsocksR完整流程，看完你也会！SSR</h2>
+</p>
+
+本文针对刚接触SSR的朋友，老手请忽略。
+
+由于SSR的搭建需要国外VPS服务器、SSR服务器端、SSR客户端三方面内容，而网上的教程大多比较分散，一篇文章往往只能了解其中一方面。这导致很多新手朋友缺少一个整体的流程认识，不知道从何处入手。
+
+下面我们就介绍下SSR搭建的整体流程，希望能帮助新用户看完后能快速上手。
+### ShadowsocksR 科学上网原理
+SSR从本质上来说是一种加密代理方式，其服务端搭建在国外VPS服务器上，客户端在用户终端设备上。服务器做为中间桥梁，使我们间接访问国外网站。同时由于是加密代理，防火墙无法识别访问内容，访问比较安全。  
+话不多说，上图：  
+
+<p align="center">
+<img align="center" src="Assets/Snipaste_2018-07-24_161526.png"/>
+</p>
+
+<br/>
+<br/>
+
+
+想了解更多基础知识可参考：  
+SSR简单介绍 帮助新手快速入门
+个人搭建SSR需要哪些条件？其实很简单！   
+[SSR简单介绍 帮助新手快速入门](01.HelpTiro.md)  
+[个人搭建SSR需要哪些条件？其实很简单！](02.Need.md)  
+#### ShadowSocksR搭建流程
+从前文的简图中，我们可以大概了解到SSR的搭建步骤：  
+1.购买1台国外VPS服务器。   
+2.在服务器上安装SSR服务端。  
+3.在本地电脑或手机等设备上，安装SSR客户端并与服务端连接，OK。  
+是不是也没那么难？下面我们会分步详细介绍，按照下面的步骤，看完你就能享受自己的SSR科学上网啦！
+
+##### 1.购买国外VPS服务器
+Vultr
+##### 2.服务器上安装SSR服务端
+SSR服务器端的安装，也很简单，有一键安装脚本支持，安装过程做几个选择就可以了：  
+[ShadowsocksR一键安装教程](05.InstallSSR.md)
+
+网络加速工具  
+Kcptun
+
+##### 3.SSR客户端安装与连接
+目前SSR客户端，根据平台不同，版本也不同。有Windows版、安卓版、iOS版、MAC版、路由器版等供我们选择，可以说覆盖非常全面了。根据个人需求，下载对应版本安装即可。  
+SSR客户端下载地址及使用教程：[SSR各平台客户端下载汇总](06.DownloadSSR.md)
+
+https://www.vultrblog.com/vultr-ss.html
+https://www.cnblogs.com/blackay03/p/9065925.html
+https://www.vultrer.com/64.html
+https://adoncn.com/31050/
+<!-- https://ssr.tools -->

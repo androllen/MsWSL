@@ -13,4 +13,4 @@ Linux flask xshell xftp supervisor ssh python virtualenv virtualenvwrapper
    * 守护进程 Supervisor
    * Docker
 1. Nginx 配置反向代理，负载均衡实战解析 <https://www.cnblogs.com/chenhaoyu/p/10815122.html>
-1. VPS 产生和用途<https://www.laozuo.org/myvps>
+1. VPS 产生和用途
