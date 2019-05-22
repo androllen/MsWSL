@@ -66,3 +66,4 @@
 * Anaconda 命令 
 * <https://www.cnblogs.com/hafiz/p/9085405.html>
 * <https://www.jianshu.com/p/52d848317c17>
+* 彻底卸载  <https://www.jianshu.com/p/50032c3cfa28>
