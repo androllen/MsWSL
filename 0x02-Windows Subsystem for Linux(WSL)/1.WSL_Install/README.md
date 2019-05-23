@@ -30,3 +30,7 @@
     wslconfig /list
     ```
     ![](Assets/Snipaste_2019-05-14_10-50-56.png)
+
+- 链接  
+  [官网安装](https://tutorials.ubuntu.com/tutorial/tutorial-ubuntu-on-windows)
+  [官网Ubuntu 镜像](https://www.ubuntu.com/download/desktop)
