@@ -15,7 +15,7 @@
     python -V
     # 创建指定的python版本虚拟环境
     virtualenv -p /usr/bin/python3.5  testEnv 
-    # 激活虚拟环境
+    # 激活虚拟环境 或者配置vs code 虚拟环境
     cd testEnv/
     source ./bin/activate or source bin/activate
     # 安装依赖
