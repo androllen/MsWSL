@@ -3,6 +3,8 @@
 
     这时候，标准化就变得尤为重要。我们可以设立一个标准，只要服务器程序支持这个标准，框架也支持这个标准，那么他们就可以配合使用。一旦标准确定，双方各自实现。这样，服务器可以支持更多支持标准的框架，框架也可以使用更多支持标准的服务器。
 
+    gunicorn只支持linux系统 不支持windows 和 Mac
+
     Python Web开发中，这个标准就是 The Web Server Gateway Interface, 即 WSGI. 这个标准在PEP 333中描述，后来，为了支持 Python 3.x, 并且修正一些问题，新的版本在PEP 3333中描述。
 
   - Website:[http://wsgi.tutorial.codepoint.net/](http://wsgi.tutorial.codepoint.net/)

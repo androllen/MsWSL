@@ -1,5 +1,24 @@
 #### Linux 虚拟环境
 
+- 更换源 /etc/apt/sources.list
+- 更新：sudo apt-get update
+    ``` 
+    deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+    deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
+    deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
+    deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+    deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+    deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+    deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
+    deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
+    deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+    deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+    ```
+
+
+安装python3 pip
+sudo apt install python3-pip
+
 * 安装virtualenv
     ``` bash
     # 准备环境 
