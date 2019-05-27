@@ -101,10 +101,12 @@
     pipenv run python your_script.py
     ```
     设置源  
-    Pipfile文件中[source]下面url属性，比如修改成：
+    Pipfile文件中[source]下面url属性，比如修改成：  
     url = "https://pypi.tuna.tsinghua.edu.cn/simple"  
-    or
-    url = "http://mirrors.aliyun.com/pypi/simple/"
+    or  
+    url = "http://mirrors.aliyun.com/pypi/simple/"  
+    or  default url
+    url = "https://pypi.org/simple"
 
 * Anaconda 命令 
 * <https://www.cnblogs.com/hafiz/p/9085405.html>
