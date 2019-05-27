@@ -105,7 +105,7 @@
     url = "https://pypi.tuna.tsinghua.edu.cn/simple"  
     or  
     url = "http://mirrors.aliyun.com/pypi/simple/"  
-    or  default url
+    or default url  
     url = "https://pypi.org/simple"
 
 * Anaconda 命令 
