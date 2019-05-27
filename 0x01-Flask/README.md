@@ -5,3 +5,5 @@
 - [flask web 开发]()
 - [部署选择中文](http://docs.jinkan.org/docs/flask/deploying/index.html#deployment) 
 - [部署选择英文](http://flask.pocoo.org/docs/1.0/deploying/)
+- https://www.jianshu.com/p/be9dd421fb8d
+- https://sphard.com/
