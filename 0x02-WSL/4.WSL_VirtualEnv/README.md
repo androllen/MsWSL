@@ -1,7 +1,7 @@
 #### Linux 虚拟环境
 
 * 安装virtualenv
-    ```
+    ``` bash
     # 准备环境 
     安装 sudo apt-get install python-pip
     # 查看是否安装虚拟环境
