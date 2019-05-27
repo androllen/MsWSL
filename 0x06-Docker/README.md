@@ -53,3 +53,7 @@
     https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
     
     https://github.com/yeasy/docker_practice
+
+    https://docs.docker.com/install/
+    docker-compose
+    https://docs.docker.com/get-started/

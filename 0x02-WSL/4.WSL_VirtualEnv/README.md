@@ -56,13 +56,56 @@
 
     查看所有虚拟环境：lsvirtualenv
 
-    ```
-    # 激活当前环境，导出和安装的环境文件
+    ``` bash
+    # 激活当前环境
     D:\Desktop\todolist>activate todoenv
+    # 导出
     (todoenv) D:\Desktop\todolist> pip freeze > requirements.txt
+    # 安装的环境文件
     (todoenv) D:\Desktop\todolist> pip install -r requirements.txt
     ```
-    
+
+- pipenv
+    ``` bash
+    # 安装pipenv
+    pip install pipenv 
+    # 列出所有依赖包
+    pip list 
+    # 会使用当前系统的Python3创建环境  
+    pipenv --three
+    # 指定某一Python版本创建环境
+    pipenv --python 3.6
+    # 激活虚拟环境
+    pipenv shell
+    # 退出虚拟环境
+    exit
+    # 显示目录信息
+    pipenv --where
+    #显示虚拟环境信息
+    pipenv --venv
+    # 显示Python解释器信息
+    pipenv --py
+    # 查看目前安装的库及其依赖
+    pipenv graph
+    # 检查安全漏洞
+    pipenv check
+    # 卸载全部包并从Pipfile中移除
+    pipenv uninstall --all
+    #
+    pipenv install requests
+    #
+    pipenv install django==1.11
+    #
+    pipenv uninstall requests
+    # pipenv虚拟环境运行python命令
+    pipenv run python your_script.py
+    ```
+    设置源  
+    Pipfile文件中[source]下面url属性，比如修改成：
+    url = "https://pypi.tuna.tsinghua.edu.cn/simple"  
+    or
+    url = "http://mirrors.aliyun.com/pypi/simple/"
+
 * Anaconda 命令 
 * <https://www.cnblogs.com/hafiz/p/9085405.html>
 * <https://www.jianshu.com/p/52d848317c17>

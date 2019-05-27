@@ -1,5 +1,5 @@
-### 概要
-基于Linux 系统 搭建开发 flask 网站
+###  Base on Windows Subsystem for Linux 18.04 TLS
+基于 Linux 系统 搭建开发 flask 网站
 
 ### 实现
 开机自启动守护进程服务，使用守护进程保护并开启python服务（网站服务）
