@@ -8,7 +8,7 @@ Supervisor
 
 * 环境：Ubuntu 18 
 
-* 安装: sudo apt-get install supervisor（建议安装）
+* 安装: sudo apt-get install supervisor (建议安装)
 
 * 配置文件详解（supervisor config file）
     ```
@@ -25,10 +25,10 @@ Supervisor
 * 配置自定义文件
     ```
     cd /etc/supervisor/conf.d
-    sudo vi test.conf
+    sudo vi todotest.conf
     ```
 
-    ```
+    ``` bash
     [program:we-todo]
     ; the program (relative uses PATH, can take args)
     command=/home/androllen/todoenv/bin/python /home/androllen/todolist/run.py
@@ -49,7 +49,8 @@ Supervisor
     ; stderr log path, NONE for none; default AUTO				
     stderr_logfile=/var/log/supervisor/supervisor_err.log			
     ; number of bytes in 'capturemode' (default 0)				
-    stderr_capture_maxbytes=1MB                     								
+    stderr_capture_maxbytes=1MB  
+    
     ```
 
 * 修改supervisord.conf Ui查看运行的自定义配置服务 
@@ -108,20 +109,68 @@ Supervisor
     # 根据最新的配置文件，启动新配置或有改动的进程，配置没有改动的进程不会受影响而重启
     sudo supervisorctl update
     ```
+    - 在cd文件夹下  
+        # 生成 supervisor 默认配置文件  
+        echo_supervisord_conf > supervisor.conf   
 
+    ```
+    │  supervisord.conf
+    │
+    └─conf.d
+            todotest.conf
+    ```
+
+    ``` bash
+    ; supervisor config file
+
+    [unix_http_server]
+    file=/var/run/supervisor.sock   ; (the path to the socket file)
+    chmod=0700                       ; sockef file mode (default 0700)
+
+    [supervisord]
+    logfile=/var/log/supervisor/supervisord.log ; (main log file;default $CWD/supervisord.log)
+    pidfile=/var/run/supervisord.pid ; (supervisord pidfile;default supervisord.pid)
+    childlogdir=/var/log/supervisor            ; ('AUTO' child log dir, default $TEMP)
+
+
+    ; the below section must remain in the config file for RPC
+
+    [inet_http_server]
+    port=127.0.0.1:9001
+    username=user
+    password=123
+
+    ; (supervisorctl/web interface) to work, additional interfaces may be
+    ; added by defining them in separate rpcinterface: sections
+    [rpcinterface:supervisor]
+    supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+
+    [supervisorctl]
+    serverurl=unix:///var/run/supervisor.sock ; use a unix:// URL  for a unix socket
+
+    ; The [include] section can just contain the "files" setting.  This
+    ; setting can list multiple files (separated by whitespace or
+    ; newlines).  It can also contain wildcards.  The filenames are
+    ; interpreted as relative to this file.  Included files *cannot*
+    ; include files themselves.
+
+    [include]
+    files = /etc/supervisor/conf.d/*.conf
+
+    ```
 
 * 问题  
-    1.Error: Another program is already listening on a port that one of our HTTP servers is configured to use.   
-    Shut this program down first before starting supervisord.  
-    For help, use /usr/bin/supervisord -h  
-    是因为有一个使用supervisor配置的应用程序正在运行，需要执行命令终止它或重新创建一个ProjectName.conf文件再执行第一条命令。  
+    - Error: Another program is already listening on a port that one of our HTTP servers is configured to use.  Shut this program down first before starting supervisord.  For help, use /usr/bin/supervisord -h  
+        是因为有一个使用supervisor配置的应用程序正在运行，需要执行命令终止它或重新创建一个ProjectName.conf文件再执行第一条命令。  
     sudo supervisorctl shutdown  
-    2.如果运行supervisorctl出现以下错误   
-    error: <class 'socket.error'>, [Errno 111] Connection refused: file: /usr/lib64/python2.6/socket.py line: 567  
-    可能是由于supervisord进程停止了，建议重新运行  
-    sudo supervisord -c /etc/supervisor/supervisord.conf  
-
-
+    - 如果运行supervisorctl出现以下错误   
+        error: <class 'socket.error'>, [Errno 111] Connection refused: file: /usr/lib64/python2.6/socket.py line: 567  
+        可能是由于supervisord进程停止了，建议重新运行  
+        sudo supervisord -c /etc/supervisor/supervisord.conf  
+    - Error: Another program is already listening on a port that one of our HTTP servers is configured to use. Shut this program down first before starting supervisord.
+For help, use /usr/bin/supervisord -h  
+        sudo unlink /run/supervisor.sock  
+        
 * 相关地址
     http://supervisord.org/  
     http://supervisord.org/configuration.html#program-x-section-settings  

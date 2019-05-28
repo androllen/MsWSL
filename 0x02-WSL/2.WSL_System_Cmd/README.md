@@ -31,11 +31,29 @@
     灰色：表示其他文件  
 
 * 创建文件夹  
-  mkdir + foo
+  - Linux  
+    mkdir + foo
+  - Win  
+    mkdir + foo  or md + foo  
+
+- 删除文件夹
+  - Win  
+    rmdir + foo or rd + foo
+  - Linux  
+    rmdir + foo or 
 
 * 创建文件  
+  - Linux  
     vi + foo  
     touch + foo
+  - Win  
+     cd>a.txt，type nul>a.txt，copy nul>a.txt 
+
+- 删除文件
+  - Win
+    del a.txt
+  - Linux 
+    rm -f file1
 
 * 快速查找使用过的命令  
     history | grep find
@@ -64,3 +82,5 @@ chcp 936 可以换回默认的GBK
 chcp 437 是美国英语  
 cmd   脚本文件的描述是 “windows nt命令脚本” （年轻人，本是多）
    
+
+ [常用命令](https://www.cnblogs.com/yjd_hycf_space/p/7730690.html)  

@@ -14,10 +14,33 @@
     deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
     deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
     ```
+- 更换PIP源  
+    清华：https://pypi.tuna.tsinghua.edu.cn/simple
 
+    阿里云：http://mirrors.aliyun.com/pypi/simple/
 
-安装python3 pip
-sudo apt install python3-pip
+    中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
+
+  - 更换方法
+    - 可以在使用pip的时候加参数-i https://pypi.tuna.tsinghua.edu.cn/simple
+
+    - Linux下，修改 ~/.pip/pip.conf (没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹)
+
+        内容如下：
+
+        [global]
+        index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+        [install]
+        trusted-host=mirrors.aliyun.com
+        windows下，直接在user目录中创建一个pip目录，如：C:\Users\xx\pip，新建文件pip.ini。内容同上。
+
+- 安装python3 pip
+    ``` bash
+    sudo apt install python3-pip
+    sudo find / -type f -mount -name pip3
+    /usr/bin/pip3
+    pip3 list
+    ```
 
 * 安装virtualenv
     ``` bash
@@ -45,7 +68,7 @@ sudo apt install python3-pip
 
 * 安装Virtualenvwrapper  
     sudo apt-get install virtualenvwrapper  
-    
+
 * 在任意目录创建 .virtualenvs （建议在 用户 根目录下）  
     androllen@DESKTOP-QKA9IF0:~$ mkdir .virtualenvs   
     androllen@DESKTOP-QKA9IF0:~$ mkdir $HOME/.virtualenvs  
@@ -87,10 +110,12 @@ sudo apt install python3-pip
 
 - pipenv
     ``` bash
-    # 安装pipenv
-    pip install pipenv 
     # 列出所有依赖包
-    pip list 
+    pip list or pip3 list
+    # 安装pipenv
+    pip install pipenv or pip3 install pipenv
+    # 查找
+    sudo find / -type f -mount -name pipenv
     # 会使用当前系统的Python3创建环境  
     pipenv --three
     # 指定某一Python版本创建环境
