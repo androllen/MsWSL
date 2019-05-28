@@ -45,6 +45,7 @@ sudo apt install python3-pip
 
 * 安装Virtualenvwrapper  
     sudo apt-get install virtualenvwrapper  
+    
 * 在任意目录创建 .virtualenvs （建议在 用户 根目录下）  
     androllen@DESKTOP-QKA9IF0:~$ mkdir .virtualenvs   
     androllen@DESKTOP-QKA9IF0:~$ mkdir $HOME/.virtualenvs  
