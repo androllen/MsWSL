@@ -30,27 +30,16 @@ Supervisor
 
     ``` bash
     [program:we-todo]
-    ; the program (relative uses PATH, can take args)
     command=/home/androllen/todoenv/bin/python /home/androllen/todolist/run.py
-    ; directory to cwd to before exec (def no cwd)
     directory=/home/androllen/todolist              
-    ; start at supervisord start (default: true)								
     autostart=true                                  			
-    ; whether/when to restart (default: unexpected)					
     autorestart=true                                		
-    ; number of secs prog must stay running (def. 1)						
     startsecs=1                                     							
-    ; max # of serial start failures (default 3)	
     startretries=3                                  			                   				
-    ; stdout log path, NONE for none; default AUTO				
     stdout_logfile=/var/log/supervisor/supervisor_out.log			
-    ; number of bytes in 'capturemode' (default 0)				
     stdout_capture_maxbytes=1MB                     				
-    ; stderr log path, NONE for none; default AUTO				
     stderr_logfile=/var/log/supervisor/supervisor_err.log			
-    ; number of bytes in 'capturemode' (default 0)				
     stderr_capture_maxbytes=1MB  
-    
     ```
 
 * 修改supervisord.conf Ui查看运行的自定义配置服务 
@@ -109,15 +98,31 @@ Supervisor
     # 根据最新的配置文件，启动新配置或有改动的进程，配置没有改动的进程不会受影响而重启
     sudo supervisorctl update
     ```
-    - 在cd文件夹下  
+    - 在cd文件夹下
+        ```
         # 生成 supervisor 默认配置文件  
         echo_supervisord_conf > supervisor.conf   
+        which gunicorn
+        /home/androllen/.local/share/virtualenvs/hiflask-Df2h_sz9/bin/gunicorn
+        ```  
 
     ```
     │  supervisord.conf
     │
     └─conf.d
             todotest.conf
+    ```
+
+    ``` 
+    [program:hiflask]
+    command=/home/androllen/hiflask/hiflaskEnv/bin/python3 /home/androllen/hiflask/hiflaskEnv/bin/gunicorn -w 4 -b 127.0.0.1:5000 myapp:app
+    directory=/home/androllen/hiflask
+    autostart=true
+    autorestart=true
+    startsecs=1
+    startretries=3
+    stdout_capture_maxbytes=1MB
+    stderr_capture_maxbytes=1MB
     ```
 
     ``` bash

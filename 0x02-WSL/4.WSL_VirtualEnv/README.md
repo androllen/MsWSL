@@ -1,6 +1,9 @@
 #### Linux 虚拟环境
 
-- 更换源 /etc/apt/sources.list
+- 更换源  
+    ```
+    sudo vim /etc/apt/sources.list
+    ```
 - 更新：sudo apt-get update
     ``` 
     deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
@@ -21,18 +24,18 @@
 
     中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
 
-  - 更换方法
-    - 可以在使用pip的时候加参数-i https://pypi.tuna.tsinghua.edu.cn/simple
+- 更换方法
+  - 可以在使用pip的时候加参数-i https://pypi.tuna.tsinghua.edu.cn/simple
 
-    - Linux下，修改 ~/.pip/pip.conf (没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹)
+  - Linux下，修改 ~/.pip/pip.conf (没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹)
 
-        内容如下：
+      内容如下：
 
-        [global]
-        index-url = https://pypi.tuna.tsinghua.edu.cn/simple
-        [install]
-        trusted-host=mirrors.aliyun.com
-        windows下，直接在user目录中创建一个pip目录，如：C:\Users\xx\pip，新建文件pip.ini。内容同上。
+      [global]
+      index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+      [install]
+      trusted-host=mirrors.aliyun.com
+      windows下，直接在user目录中创建一个pip目录，如：C:\Users\xx\pip，新建文件pip.ini。内容同上。
 
 - 安装python3 pip
     ``` bash
@@ -112,8 +115,12 @@
     ``` bash
     # 列出所有依赖包
     pip list or pip3 list
+    # 必须使用 -U 否则 pipenv: command not found
+    -i: 指定库的安装源
+    -U:升级 原来已经安装的包，不带U不会装新版本，带上U才会更新到最新版本
+    pip3 install -U pipenv
     # 安装pipenv
-    pip install pipenv or pip3 install pipenv
+    pip install pipenv
     # 查找
     sudo find / -type f -mount -name pipenv
     # 会使用当前系统的Python3创建环境  

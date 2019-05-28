@@ -34,3 +34,4 @@
 - 链接  
   [官网安装](https://tutorials.ubuntu.com/tutorial/tutorial-ubuntu-on-windows)  
   [官网Ubuntu 镜像](https://www.ubuntu.com/download/desktop)
+  [官网Ubuntu 镜像源](https://packages.ubuntu.com/)
