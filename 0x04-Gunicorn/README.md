@@ -27,8 +27,21 @@
   - 与Python Python 2.x >= 2.6 or 3.x >= 3.2 兼容
 
 
-
-
+#### 配置文件
+  ``` python
+  import os
+  bind='127.0.0.1:8001' #绑定的端口 此处的地址和 Nginx 绑定的地址一样
+  workers=4	#worker数量
+  backlog=2048
+  debug=True
+  proc_name='gunicorn.pid'
+  pidfile='/var/log/gunicorn/debug.log'
+  loglevel='debug'
+  ```
+  - 命令
+  gunicorn -c deploy_config.py myapp:app
+  - Supervisor
+  /var/proj/xxx/venv/bin/python /usr/bin/gunicorn -c /var/proj/xxx/deploy_config.py myapp:app
 
 
 #### 相关链接
