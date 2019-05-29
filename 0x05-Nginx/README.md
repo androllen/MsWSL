@@ -7,6 +7,7 @@
 - [命令行](02.Commands.md)
 - [反向代理](03.Reverse_Proxy.md)
 
+[Nginx 教程](http://openresty.org/download/agentzh-nginx-tutorials-zhcn.html)
 
 
 

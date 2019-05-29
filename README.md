@@ -2,6 +2,7 @@
 
 ### 关键词
 Linux flask xshell xftp supervisor ssh python virtualenv Docker Gunicorn Nginx
+
 ### 目标
 1. Flask web前端框架
    * Flask 教程
@@ -25,5 +26,6 @@ Linux flask xshell xftp supervisor ssh python virtualenv Docker Gunicorn Nginx
 [在 Ubuntu 上使用 Nginx 部署 Flask 应用 ](https://www.oschina.net/translate/serving-flask-with-nginx-on-ubuntu)  
 [how-to-deploy-flask-apps](https://blog.igevin.info/posts/how-to-deploy-flask-apps/)
 [nginx + gunicorn + supervisor + flask 部署笔记](https://www.jianshu.com/p/be9dd421fb8d)
+http://beiyuu.com/vps-config-python-vitrualenv-flask-gunicorn-supervisor-nginx
 
 **本站使用「署名 4.0 国际」创作共享协议，转载请在文章明显位置注明作者及出处。**
