@@ -13,9 +13,17 @@
     ```	
 
 * 修改sshd_config配置
+  先查看下本地Windows10 ssh 是否打开：
+  - 没有打开  
     ```
     Port 22  #修改端口，原来的22端口已经存在
     ListenAddress 127.0.0.1  #打开本地监听
+    PasswordAuthentication yes  #修改登陆的方式，允许密码登陆
+    ```
+  - 打开  
+    ```
+    Port 2232  #修改端口，原来的22端口已经存在
+    ListenAddress 0.0.0.0  #打开本地监听
     PasswordAuthentication yes  #修改登陆的方式，允许密码登陆
     ```
 
@@ -43,7 +51,7 @@
 
 * 运行为windows后台进程  
     当前WSL并不支持ssh server作为服务运行。  
-    [文件下载][wslvbs-id]
+    [文件下载][wslvbs_id]
 
     ```
     set ws=wscript.createobject("wscript.shell")
@@ -52,7 +60,7 @@
     ```
 
     1. cd %AppData%\Microsoft\Windows\Start Menu\Programs\Startup  
-    1. 将上面的脚本，保存为 startWSL.vbs  
+    2. 将上面的脚本，保存为 startWSL.vbs  
 
     > 上述脚本存在一个问题，就是执行sudo时，会提示输入密码，而这时又无法拿到用户的输入。要解决这一问题，需要允许sudo在没有密码的情况下执行命令。  
     > 我们需要借助windows计划任务和脚本，使得在windows启动时自动运行这一服务。  
@@ -79,17 +87,17 @@
     6. ![](Assets/Snipaste_2019-05-14_13-31-08.png)
     7. ![](Assets/Snipaste_2019-05-14_13-31-40.png)
     8. ![](Assets/Snipaste_2019-05-14_13-32-02.png)
-    9. [文件下载][taskvbs-id]
+    9. [文件下载][taskvbs_id]
     10. 或者选择导入
 * 重启Windows
 
 #### 相关连接
 [在wsl下安装使用sshd全攻略](https://hbaaron.github.io/blog_2017/%E5%9C%A8wsl%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8sshd%E5%85%A8%E6%94%BB%E7%95%A5)
 [使用xshell登陆](https://blog.csdn.net/tengchengbaba/article/details/85481145)  
-[https://www.cnblogs.com/seekwind/p/10256262.html](https://www.cnblogs.com/seekwind/p/10256262.html)
+[https://www.cnblogs.com/seekwind/p/10256262.html](https://www.cnblogs.com/seekwind/p/10256262.html)  
 [https://www.cnblogs.com/ACDIV/p/9047825.html](https://www.cnblogs.com/ACDIV/p/9047825.html)
 
 
 
-[wslvbs-id]: Assets/startWSL.vbs
-[taskvbs-id]: Assets/AutoService.xml
+[wslvbs_id]: Assets/startWSL.vbs
+[taskvbs_id]: Assets/AutoService.xml
