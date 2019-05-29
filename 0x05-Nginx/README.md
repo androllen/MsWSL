@@ -1,7 +1,13 @@
-一个高性能的 HTTP 和 反向代理 服务器，也是一个 IMAP/POP3/SMTP 代理服务器
+### Nginx 
 
-http://www.ruanyifeng.com/blog/2018/02/nginx-docker.html
+使用Nginx反向代理配置web应用服务器(Gunicorn)
+
+
+- [安装Nginx](01.Install_Nginx.md)
+- [命令行](02.Commands.md)
+- [反向代理](03.Reverse Proxy.md)
 
 
 
-https://www.jianshu.com/p/be9dd421fb8d
+
+

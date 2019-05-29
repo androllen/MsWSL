@@ -7,3 +7,4 @@
 - [部署选择英文](http://flask.pocoo.org/docs/1.0/deploying/)
 - https://www.jianshu.com/p/be9dd421fb8d
 - https://sphard.com/
+- [https://www.jianshu.com/p/80da00b02b7e](https://www.jianshu.com/p/80da00b02b7e)

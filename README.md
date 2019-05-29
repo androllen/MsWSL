@@ -14,7 +14,7 @@ Linux flask xshell xftp supervisor ssh python virtualenv Docker Gunicorn Nginx
    * WSL 使用Xshell Xftp 连接SSH
 3. Supervisor
 4. Gunicorn
-5. Nginx 配置反向代理，负载均衡实战解析 <https://www.cnblogs.com/chenhaoyu/p/10815122.html>
+5. Nginx
 6. Docker
 7. VPS 产生和用途
 
@@ -24,4 +24,6 @@ Linux flask xshell xftp supervisor ssh python virtualenv Docker Gunicorn Nginx
 [Flask 部署和分发](https://www.cnblogs.com/Erick-L/p/7025668.html)  
 [在 Ubuntu 上使用 Nginx 部署 Flask 应用 ](https://www.oschina.net/translate/serving-flask-with-nginx-on-ubuntu)  
 [how-to-deploy-flask-apps](https://blog.igevin.info/posts/how-to-deploy-flask-apps/)
- 
+[nginx + gunicorn + supervisor + flask 部署笔记](https://www.jianshu.com/p/be9dd421fb8d)
+
+**本站使用「署名 4.0 国际」创作共享协议，转载请在文章明显位置注明作者及出处。**
