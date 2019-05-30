@@ -17,6 +17,9 @@
     sudo updatedb 
     locate --basename vim
     ```
+    
+- 查看所有启动的服务  
+  service --status-all
 
 * find 搜索文件夹和文件  
     sudo find / -type d -mount -name supervisor 

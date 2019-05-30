@@ -20,27 +20,20 @@ Supervisor
     [supervisorctl]   
     # 这个东西挺有用的，当我们要管理的进程很多的时候，写在一个文件里面就有点大了。我们可以把配置信息写到多个文件中，然后include过来
     [include]  
+    # 手动生成 supervisor 主配置文件 (当创建gunicorn的时候使用)  
+    echo_supervisord_conf > supervisor.conf      
     ```
+    
+    ```
+    │  supervisord.conf  (默认安装自动包含主配置)
+    │
+    └─conf.d
+            todotest.conf (python 程序配置)
+            gunicorn.conf (gunicorn 程序配置)
+            nginx.conf    (nginx 程序配置)
+    ```
+    
 
-* 配置自定义文件
-    ```
-    cd /etc/supervisor/conf.d
-    sudo vi todotest.conf
-    ```
-
-    ``` bash
-    [program:we-todo]
-    command=/home/androllen/todoenv/bin/python /home/androllen/todolist/run.py
-    directory=/home/androllen/todolist              
-    autostart=true                                  			
-    autorestart=true                                		
-    startsecs=1                                     							
-    startretries=3                                  			                   				
-    stdout_logfile=/var/log/supervisor/supervisor_out.log			
-    stdout_capture_maxbytes=1MB                     				
-    stderr_logfile=/var/log/supervisor/supervisor_err.log			
-    stderr_capture_maxbytes=1MB  
-    ```
 
 * 修改supervisord.conf Ui查看运行的自定义配置服务 
     ```
@@ -98,33 +91,30 @@ Supervisor
     # 根据最新的配置文件，启动新配置或有改动的进程，配置没有改动的进程不会受影响而重启
     sudo supervisorctl update
     ```
-    - 在cd文件夹下
-        ```
-        # 生成 supervisor 默认配置文件  
-        echo_supervisord_conf > supervisor.conf   
-        which gunicorn
-        /home/androllen/.local/share/virtualenvs/hiflask-Df2h_sz9/bin/gunicorn
-        ```  
 
+
+* 配置
+  eg:  
     ```
-    │  supervisord.conf
-    │
-    └─conf.d
-            todotest.conf
+    cd /etc/supervisor/conf.d
+    sudo vi todotest.conf
     ```
 
-    ``` 
-    [program:hiflask]
-    command=/home/androllen/hiflask/hiflaskEnv/bin/python3 /home/androllen/hiflask/hiflaskEnv/bin/gunicorn -w 4 -b 127.0.0.1:5000 myapp:app
-    directory=/home/androllen/hiflask
-    autostart=true
-    autorestart=true
-    startsecs=1
-    startretries=3
-    stdout_capture_maxbytes=1MB
-    stderr_capture_maxbytes=1MB
+    ``` bash
+    [program:we-todo]
+    command=/home/androllen/todoenv/bin/python /home/androllen/todolist/run.py
+    directory=/home/androllen/todolist              
+    autostart=true                                  			
+    autorestart=true                                		
+    startsecs=1                                     							
+    startretries=3                                  			                   				
+    stdout_logfile=/var/log/supervisor/supervisor_out.log			
+    stdout_capture_maxbytes=1MB                     				
+    stderr_logfile=/var/log/supervisor/supervisor_err.log			
+    stderr_capture_maxbytes=1MB  
     ```
 
+- 修改主配置
     ``` bash
     ; supervisor config file
 
@@ -161,8 +151,8 @@ Supervisor
 
     [include]
     files = /etc/supervisor/conf.d/*.conf
-
     ```
+
 
 * 问题  
     - Error: Another program is already listening on a port that one of our HTTP servers is configured to use.  Shut this program down first before starting supervisord.  For help, use /usr/bin/supervisord -h  

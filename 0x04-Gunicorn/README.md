@@ -28,21 +28,41 @@
 
 
 #### 配置文件
-  不能都用默认的配置，因为可能后续还会在扩展，要安装在项目使用的虚拟环境中
-  ``` python
-  import os
-  bind='127.0.0.1:8001' #绑定的端口 此处的地址和 Nginx 绑定的地址一样
-  workers=4	#worker数量
-  backlog=2048
-  debug=True
-  proc_name='gunicorn.pid'
-  pidfile='/var/log/gunicorn/debug.log'
-  loglevel='debug'
-  ```
-  - 命令
-  gunicorn -c deploy_config.py myapp:app
-  - Supervisor
-  /var/proj/xxx/venv/bin/python /usr/bin/gunicorn -c /var/proj/xxx/deploy_config.py myapp:app
+  - 通过py文件生成
+    不能都用默认的配置，因为可能后续还会在扩展，要安装在项目使用的虚拟环境中
+    ``` python
+    import os
+    bind='127.0.0.1:8001' #绑定的端口 此处的地址和 Nginx 绑定的地址一样
+    workers=4	#worker数量
+    backlog=2048
+    debug=True
+    proc_name='gunicorn.pid'
+    pidfile='/var/log/gunicorn/debug.log'
+    loglevel='debug'
+    ```
+    - 命令
+    gunicorn -c deploy_config.py myapp:app
+    - Supervisor
+    /var/proj/xxx/venv/bin/python /usr/bin/gunicorn -c /var/proj/xxx/deploy_config.py myapp:app
+
+  - 通过supervisor配置生成
+    - 在cd文件夹下
+        ``` bash
+        which gunicorn
+        /home/androllen/.local/share/virtualenvs/hiflask-Df2h_sz9/bin/gunicorn
+        ```  
+
+    ``` bash
+    [program:hiflask]
+    command=/home/androllen/hiflask/hiflaskEnv/bin/python3 /home/androllen/hiflask/hiflaskEnv/bin/gunicorn -w 4 -b 127.0.0.1:5000 myapp:app
+    directory=/home/androllen/hiflask
+    autostart=true
+    autorestart=true
+    startsecs=1
+    startretries=3
+    stdout_capture_maxbytes=1MB
+    stderr_capture_maxbytes=1MB
+    ```
 
 
 #### 相关链接
@@ -52,6 +72,8 @@
  - [https://gunicorn.org/](https://gunicorn.org/)
  - [Gunicorn入门](https://www.cnblogs.com/ArtsCrafts/p/gunicorn.html)
  - [Gunicorn专题](https://www.zhihu.com/topic/19810964/hot)
+
+
 #### QA
   - Nginx、Gunicorn在服务器中分别起什么作用？
     [参考地址](https://www.zhihu.com/question/38528616)
