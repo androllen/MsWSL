@@ -29,8 +29,8 @@ Supervisor
     │
     └─conf.d
             todotest.conf (python 程序配置)
-            gunicorn.conf (gunicorn 程序配置)
-            nginx.conf    (nginx 程序配置)
+            higunicorn.conf (gunicorn 程序配置)
+            hinginx.conf    (nginx 程序配置)
     ```
     
 

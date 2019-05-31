@@ -34,10 +34,10 @@ Linux flask xshell xftp supervisor ssh python virtualenv Docker Gunicorn Nginx
 #### 链接
 [nginx-supervisor-gunicorn-flask](http://www.simpleapples.com/2015/06/11/configure-nginx-supervisor-gunicorn-flask/)  
 [flask+nginx+gunicorn](https://baijiahao.baidu.com/s?id=1616440047552092518&wfr=spider&for=pc)  
-[Flask 部署和分发](https://www.cnblogs.com/Erick-L/p/7025668.html)  
 [在 Ubuntu 上使用 Nginx 部署 Flask 应用 ](https://www.oschina.net/translate/serving-flask-with-nginx-on-ubuntu)  
 [how-to-deploy-flask-apps](https://blog.igevin.info/posts/how-to-deploy-flask-apps/)
-[nginx + gunicorn + supervisor + flask 部署笔记](https://www.jianshu.com/p/be9dd421fb8d)  
-http://beiyuu.com/  vps-config-python-vitrualenv-flask-gunicorn-supervisor-nginx
+[nginx + gunicorn + supervisor + flask 部署笔记](https://www.jianshu.com/p/be9dd421fb8d)
+
+[vps-config-python-vitrualenv-flask-gunicorn-supervisor-nginx](http://beiyuu.com/vps-config-python-vitrualenv-flask-gunicorn-supervisor-nginx)  
 
 **本站使用「署名 4.0 国际」创作共享协议，转载请在文章明显位置注明作者及出处。**

@@ -24,6 +24,10 @@
 * find 搜索文件夹和文件  
     sudo find / -type d -mount -name supervisor 
 
+* ln   
+  软链接： ln -s 源文件 目标文件   
+  硬链接： ln 源文件 目标文件
+
 * ls 颜色命令  
     蓝色：表示目录  
     绿色：表示可执行文件  
