@@ -163,11 +163,11 @@ Supervisor
         可能是由于supervisord进程停止了，建议重新运行  
         sudo supervisord -c /etc/supervisor/supervisord.conf  
     - Error: Another program is already listening on a port that one of our HTTP servers is configured to use. Shut this program down first before starting supervisord.
-For help, use /usr/bin/supervisord -h  
+        For help, use /usr/bin/supervisord -h  
         sudo unlink /run/supervisor.sock  
         
 * 相关地址  
     http://supervisord.org/  
     http://supervisord.org/configuration.html#program-x-section-settings  
     https://blog.csdn.net/u013421629/article/details/79174313  
-
+    <https://www.cnblogs.com/hequan/p/9182746.html>
