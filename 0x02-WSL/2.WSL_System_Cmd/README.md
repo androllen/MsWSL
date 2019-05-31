@@ -69,6 +69,26 @@
 * 快速查找使用过的命令  
     history | grep find
     
+* 添加用户
+  sudo adduser androllen
+  ls /home 
+
+* 删除用户
+  在删除用户之前切换到root
+  ubuntu删除用户同样是在终端下操作的，需要注意的是，如果要删除的用户当前已登陆，是删除不掉的，必须注销掉当前用户切换为另一个用户下，才能删除。举个例子，刚才我新建立了一个用户为 yang 的用户，例如我现在用用户 yang 登陆了桌面，此时如果我想删除 yang 这个用户，是删除不掉的。正确的操作方法是，我注销掉 yang，然后使用 root 登陆到桌面，再删除 yang 即可。
+  删除ubuntu用户的命令比较容易记：sudo userdel username，例如我想删除 yang ，则输入：sudo userdel yang，删除成功后，系统无任何提示。
+
+* 切换root
+  ``` bash
+  # 要求我们输入当前我们的密码 
+  sudo su
+  # 将当前用户有普通用户切换到root用户模式中
+  sudo -i
+  ```
+
+
+* 退出 root
+  exit
 
 * 快捷键
     > ctrl+a   ctrl+e   分别代表把管标移动到最前和最后  
