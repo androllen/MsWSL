@@ -121,6 +121,8 @@
     pip3 install -U pipenv
     # 安装pipenv
     pip install pipenv
+    # 版本
+    pipenv --version
     # 查找
     sudo find / -type f -mount -name pipenv
     # 会使用当前系统的Python3创建环境  

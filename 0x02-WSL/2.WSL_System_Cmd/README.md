@@ -49,7 +49,11 @@
     rmdir + foo or rd + foo
 
   - Linux  
-    rmdir + foo or 
+    ``` bash
+    rmdir + foo
+    # 强制删除非空文件夹
+    rm -rf 目录名
+    ```
 
 * 创建文件  
   - Linux  
