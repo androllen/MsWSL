@@ -31,14 +31,18 @@
   - 各种服务器的可扩展钩子
   - 与Python Python 2.x >= 2.6 or 3.x >= 3.2 兼容
 
+#### 创建
+  pipenv install gunicorn  
 
 #### 配置文件
-  - 通过py文件生成  
+  - 通过 脚本 启动  
     不能都用默认的配置，因为可能后续还会在扩展，要安装在项目使用的虚拟环境中
     ``` python
     import os
-    bind='127.0.0.1:8001' #绑定的端口 此处的地址和 Nginx 绑定的地址一样
-    workers=4	#worker数量
+    import multiprocessing
+
+    bind = "127.0.0.1:8000"#此处的地址和绑定的端口 和 Nginx 绑定的地址一样
+    workers = multiprocessing.cpu_count() * 2 + 1 #worker数量
     backlog=2048
     debug=True
     proc_name='gunicorn.pid'
@@ -50,7 +54,7 @@
     - Supervisor  
     /var/proj/xxx/venv/bin/python /usr/bin/gunicorn -c /var/proj/xxx/deploy_config.py myapp:app
 
-  - 通过supervisor配置生成
+  - 通过 supervisor 启动
     - 在cd文件夹下  
         ``` bash
         which gunicorn
