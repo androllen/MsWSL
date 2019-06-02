@@ -29,3 +29,12 @@
 单行删除：按esc键后, 然后dd  
 
 粘贴：按esc键后, 然后p  
+
+#### QA
+	``` bash
+	Q:
+	shell returned 127
+	Press ENTER or type command to continue
+	A:
+	:q!
+	```

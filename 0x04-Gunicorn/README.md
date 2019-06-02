@@ -20,6 +20,8 @@
 
 #### Gunicorn 概要
   Gunicorn 绿色独角兽'是一个Python WSGI UNIX的HTTP服务器。这是一个预先叉工人模式，从Ruby的独角兽（Unicorn ）项目移植。该Gunicorn服务器大致与各种Web框架兼容，只需非常简单的执行，轻量级的资源消耗，以及相当迅速。
+  gunicorn 默认作为一个监听 127.0.0.1:8000 的web server，可以在本机通过： http://127.0.0.1:8000 访问。  
+  如果要通过网络访问，则需要绑定不同的地址（也可以同时设置监听端口），设置0.0.0.0可以监听到所有ip的请求  
 
   - Website :[http://gunicorn.org/](http://gunicorn.org/)
   - Source code :[https://github.com/benoitc/gunicorn](https://github.com/benoitc/gunicorn)
@@ -32,10 +34,13 @@
   - 与Python Python 2.x >= 2.6 or 3.x >= 3.2 兼容
 
 #### 创建
+  ``` bash
+  # cd 到 run.py
   pipenv install gunicorn  
-
+  ```
+  
 #### 配置文件
-  - 通过 脚本 启动  
+  - 通过脚本启动(未验证)  
     不能都用默认的配置，因为可能后续还会在扩展，要安装在项目使用的虚拟环境中
     ``` python
     import os
@@ -55,23 +60,42 @@
     /var/proj/xxx/venv/bin/python /usr/bin/gunicorn -c /var/proj/xxx/deploy_config.py myapp:app
 
   - 通过 supervisor 启动
-    - 在cd文件夹下  
-        ``` bash
-        which gunicorn
-        /home/androllen/.local/share/virtualenvs/hiflask-Df2h_sz9/bin/gunicorn
-        ```  
+    - 使用virtualenvs
+      ``` bash
+      [program:higunicorn]
+      command=/home/androllen/hiflask/hiflaskEnv/bin/python3 /home/androllen/hiflask/hiflaskEnv/bin/gunicorn -w 4 -b 127.0.0.1:8000 myapp:app
+      directory=/home/androllen/hiflask/src
+      autostart=true
+      autorestart=true
+      startsecs=1
+      startretries=3
+      stdout_capture_maxbytes=1MB
+      stderr_capture_maxbytes=1MB
+      stdout_logfile=/var/log/supervisor/higunicorn_out.log	
+      stderr_logfile=/var/log/supervisor/higunicorn_err.log
 
-    ``` bash
-    [program:hiflask]
-    command=/home/androllen/hiflask/hiflaskEnv/bin/python3 /home/androllen/hiflask/hiflaskEnv/bin/gunicorn -w 4 -b 127.0.0.1:5000 myapp:app
-    directory=/home/androllen/hiflask
-    autostart=true
-    autorestart=true
-    startsecs=1
-    startretries=3
-    stdout_capture_maxbytes=1MB
-    stderr_capture_maxbytes=1MB
-    ```
+      ```
+
+    - 使用pipenv
+      ``` bash
+          sudo find -type f -mount -name gunicorn
+          /home/androllen/.local/share/virtualenvs/hiflask-sYW1TGXP/bin/gunicorn
+      ```  
+
+      ``` bash
+      [program:higunicorn]
+      command=/home/androllen/.local/share/virtualenvs/webflask-sYW1TGXP/bin/python3 /home/androllen/.local/share/virtualenvs/webflask-sYW1TGXP/bin/gunicorn -w 4 -b 127.0.0.1:8000 run:app
+      directory=/home/androllen/hiflask/src
+      autostart=true
+      autorestart=true
+      startsecs=1
+      startretries=3
+      stdout_capture_maxbytes=1MB
+      stderr_capture_maxbytes=1MB
+      stdout_logfile=/var/log/supervisor/higunicorn_out.log	
+      stderr_logfile=/var/log/supervisor/higunicorn_err.log      
+      ```
+
 
 
 #### 相关链接

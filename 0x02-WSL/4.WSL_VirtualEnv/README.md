@@ -39,6 +39,7 @@
 
 - 安装python3 pip
     ``` bash
+    sudo apt-get install python3.7
     sudo apt-get install python3-pip or sudo easy_install pip
     sudo find / -type f -mount -name pip3
     /usr/bin/pip3

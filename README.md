@@ -39,5 +39,6 @@ Linux flask xshell xftp supervisor ssh python virtualenv Docker Gunicorn Nginx
 [nginx + gunicorn + supervisor + flask 部署笔记](https://www.jianshu.com/p/be9dd421fb8d)
 
 [vps-config-python-vitrualenv-flask-gunicorn-supervisor-nginx](http://beiyuu.com/vps-config-python-vitrualenv-flask-gunicorn-supervisor-nginx)  
+[在 ufw 上开启 nat 伪装和端口转发](https://www.logcg.com/archives/993.html)  
 
 **本站使用「署名 4.0 国际」创作共享协议，转载请在文章明显位置注明作者及出处。**

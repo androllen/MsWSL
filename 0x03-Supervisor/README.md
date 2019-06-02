@@ -36,13 +36,13 @@ Supervisor
 
 
 * 修改supervisord.conf Ui查看运行的自定义配置服务 
-    ```
-    [inet_http_server]
-    port=127.0.0.1:9001
-    username=user
-    password=123
-    访问这个地址 http://127.0.0.1:9001就能跳转到supervisord 的服务管理界面
-    ```
+	```
+	[inet_http_server]
+	port=127.0.0.1:9001
+	username=user
+	password=123
+	访问这个地址 http://127.0.0.1:9001就能跳转到supervisord 的服务管理界面
+	```
 
 
 * 命令管理
