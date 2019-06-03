@@ -70,9 +70,10 @@ Supervisor
 
 * Supervisorctl 命令介绍
     ```
-    #关闭所有任务 
+    # 停止 supervisord 先关闭supervisor启动脚本，之后再关闭supervisord服务
     sudo supervisorctl shutdown 
-    #查看所有任务状态
+    
+    # 查看 supervisord 当前管理的所有进程的状态
     sudo supervisorctl status 
     # 停止某一个进程，program_name 为 [program:x] 里的 x
     sudo supervisorctl stop program_name
@@ -84,9 +85,9 @@ Supervisor
     sudo supervisorctl stop groupworker:
     # 结束 groupworker:name1 这个进程 (start，restart 同理)
     sudo supervisorctl stop groupworker:name1
-    # 停止全部进程，注：start、restart、stop 都不会载入最新的配置文件 先关闭supervisor启动脚本，之后再关闭supervisord服务
+    # 停止全部进程，注：start、restart、stop 都不会载入最新的配置文件 
     sudo supervisorctl stop all
-    # 载入最新的配置文件，停止原有进程并按新的配置启动、管理所有进程
+    # 重新加载配置文件，停止原有进程并按新的配置启动、管理所有进程 
     sudo supervisorctl reload
     # 根据最新的配置文件，启动新配置或有改动的进程，配置没有改动的进程不会受影响而重启
     sudo supervisorctl update

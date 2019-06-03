@@ -70,12 +70,17 @@
   - Linux 
     rm -f file1
 
+- 复制文件夹到文件夹
+  - win
+  - linux
+    cp -a hiflaskEnv/ /home/androllen/webflask/  
+
 * 快速查找使用过的命令  
     history | grep find
     
-* 添加用户
-  sudo adduser androllen
-  ls /home 
+* 添加用户  
+  sudo adduser androllen  
+  ls /home  
 
 * 删除用户
   在删除用户之前切换到root
