@@ -110,4 +110,10 @@
 #### QA
   - Nginx、Gunicorn在服务器中分别起什么作用？
     [参考地址](https://www.zhihu.com/question/38528616)
-
+  
+  - can't find command 'gunicorn'
+    我不知道是不是我坑
+    创建的虚拟环境里 gunicorn 竟然不能使用，我使用的是pipenv install gunicorn
+    好像是 没有映射到虚拟环境里。
+    解决方法：
+    使用绝对路径 /home/androllen/.local/share/virtualenvs/webflask-sYW1TGXP/bin/python3 /home/androllen/.local/share/virtualenvs/webflask-sYW1TGXP/bin/gunicorn 
