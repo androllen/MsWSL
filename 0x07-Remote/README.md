@@ -130,7 +130,7 @@
   
 开始访问吧!  [https://www.achinesepainter.com/](https://www.achinesepainter.com/)
 
-***到这里基本流程结束，下一次会带大家一起学习 flask ***
+```到这里基本流程结束，下一次会带大家一起学习 flask ```
 
 
 
