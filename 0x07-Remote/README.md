@@ -110,7 +110,9 @@
     http://127.0.0.1:9001
     ```
     [gunicorn.conf](Assets\gunicorn.conf)  
+
     [nginx.conf](\Assets\nginx.conf)  
+    
     ![](Assets/20190531160103.png)
 
 6. 开启 80 443 端口  
@@ -126,7 +128,7 @@
      - [跳转到这里修改](../0x05-Nginx/07.Nginx_Config.md)
      - 重启 service Nginx reload 
   
-开始访问吧![https://www.achinesepainter.com/](https://www.achinesepainter.com/)
+开始访问吧!  [https://www.achinesepainter.com/](https://www.achinesepainter.com/)
 
 ***到这里基本流程结束，下一次会带大家一起学习 flask ***
 
