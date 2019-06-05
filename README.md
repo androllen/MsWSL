@@ -19,6 +19,11 @@ Linux flask xshell xftp supervisor ssh python virtualenv Docker Gunicorn Nginx
    * Nginx 安装
    * Nginx 命令
    * Nginx 反向代理
+   * ufw 和 证书
+   * Nginx http
+   * Nginx https
+   * Nginx 配置
+   * Nginx 守护进程
 6. Docker
    * 说明
    * 安装
@@ -29,7 +34,8 @@ Linux flask xshell xftp supervisor ssh python virtualenv Docker Gunicorn Nginx
    * 创建容器
    * 阿里Docker
    * 问答
-7. VPS 产生和用途
+7. 远程部署详解
+8. VPS
 
 #### 链接
 [nginx-supervisor-gunicorn-flask](http://www.simpleapples.com/2015/06/11/configure-nginx-supervisor-gunicorn-flask/)  
@@ -37,7 +43,6 @@ Linux flask xshell xftp supervisor ssh python virtualenv Docker Gunicorn Nginx
 [在 Ubuntu 上使用 Nginx 部署 Flask 应用 ](https://www.oschina.net/translate/serving-flask-with-nginx-on-ubuntu)  
 [how-to-deploy-flask-apps](https://blog.igevin.info/posts/how-to-deploy-flask-apps/)
 [nginx + gunicorn + supervisor + flask 部署笔记](https://www.jianshu.com/p/be9dd421fb8d)
-
 [vps-config-python-vitrualenv-flask-gunicorn-supervisor-nginx](http://beiyuu.com/vps-config-python-vitrualenv-flask-gunicorn-supervisor-nginx)  
 [在 ufw 上开启 nat 伪装和端口转发](https://www.logcg.com/archives/993.html)  
 

@@ -17,3 +17,7 @@ https://www.tutorialspoint.com/flask/flask_routing.htm
 https://www.fullstackpython.com/flask.html
 
 https://read.helloflask.com/
+
+- [部署选择中文](http://docs.jinkan.org/docs/flask/deploying/index.html#deployment) 
+- [部署选择英文](http://flask.pocoo.org/docs/1.0/deploying/)
+[flask 部署笔记](https://www.jianshu.com/p/80da00b02b7e) 
