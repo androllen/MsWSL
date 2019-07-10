@@ -20,26 +20,9 @@
     ctrl + c
     ```
 
-2. 准备 Supervisor
-    ``` bash
-    # 安装
-    sudo apt-get install supervisor 
-    # supervisord is  not running.
-    sudo service supervisor status
-    # Starting supervisor: supervisord.
-    sudo service supervisor start
-    # 切换到
-    cd /etc/supervisor
-    # 备份
-    $ sudo cp supervisord.conf supervisord.conf.bak
-    # 编辑
-    sudo vi supervisord.conf
-    # 添加
-    [inet_http_server]
-    port=127.0.0.1:9001
-    username=user
-    password=123    
-    ```
+2. 创建用户目录
+  adduser androllen  
+
 
 3. 准备 Gunicorn
     ``` bash
@@ -94,7 +77,28 @@
     ```
     这个时候 你可以使用你的 vps-IP地址 访问你的网站了
 
-5. 使用 Supervisor 守护 Gunicorn 和 Nginx
+3. 准备 Supervisor
+    ``` bash
+    # 安装
+    sudo apt-get install supervisor 
+    # supervisord is  not running.
+    sudo service supervisor status
+    # Starting supervisor: supervisord.
+    sudo service supervisor start
+    # 切换到
+    cd /etc/supervisor
+    # 备份
+    $ sudo cp supervisord.conf supervisord.conf.bak
+    # 编辑
+    sudo vi supervisord.conf
+    # 添加
+    [inet_http_server]
+    port=127.0.0.1:9001
+    username=user
+    password=123    
+    ```
+
+6. 使用 Supervisor 守护 Gunicorn 和 Nginx
     ``` bash
     # 切换到
     cd /etc/supervisor/conf.d/
@@ -115,11 +119,11 @@
     
     ![](Assets/20190531160103.png)
 
-6. 开启 80 443 端口  
+7. 开启 80 443 端口  
      - [跳转到这里修改](../0x05-Nginx/04.Ufw_Cert.md)
 
 
-7. 开启 nginx https 访问  
+8. 开启 nginx https 访问  
      - 确定开启443 端口  
      - 去阿里云或者腾讯云申请免费cert  
      - [跳转到这里修改](../0x05-Nginx/04.Ufw_Cert.md)

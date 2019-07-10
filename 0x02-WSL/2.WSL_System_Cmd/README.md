@@ -82,6 +82,12 @@
   sudo adduser androllen  
   ls /home  
 
+
+- userdel  -r  用户名
+- useradd -m -s  用户名
+- passwd 用户名
+
+
 * 删除用户
   在删除用户之前切换到root
   ubuntu删除用户同样是在终端下操作的，需要注意的是，如果要删除的用户当前已登陆，是删除不掉的，必须注销掉当前用户切换为另一个用户下，才能删除。举个例子，刚才我新建立了一个用户为 yang 的用户，例如我现在用用户 yang 登陆了桌面，此时如果我想删除 yang 这个用户，是删除不掉的。正确的操作方法是，我注销掉 yang，然后使用 root 登陆到桌面，再删除 yang 即可。
@@ -93,10 +99,12 @@
   sudo su
   # 将当前用户有普通用户切换到root用户模式中
   sudo -i
+  # su是switch user的缩写，表示用户切换
+  su 用户名
   ```
 
 
-* 退出 root
+* 退出 root 从新的用户状态下输入“exit”即可退回到刚才的用户状态
   exit
 
 * 快捷键
