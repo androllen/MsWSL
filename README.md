@@ -4,18 +4,17 @@
 Linux flask xshell xftp supervisor ssh python virtualenv Docker Gunicorn Nginx
 
 ### 目标
-1. Flask web前端框架
-   * Flask 教程
-   * Flask 练习
+1. Web前端框架
+   * Flask 
+   * Django 
 2. WSL(Windows Subsystem for Linux)
    * WSL 安装
    * WSL 系统命令
    * WSL Vim 编辑命令
    * WSL 虚拟环境
    * WSL 使用Xshell Xftp 连接SSH
-3. Supervisor
-4. Gunicorn
-5. Nginx
+3. Gunicorn
+4. Nginx
    * Nginx 安装
    * Nginx 命令
    * Nginx 反向代理
@@ -24,6 +23,7 @@ Linux flask xshell xftp supervisor ssh python virtualenv Docker Gunicorn Nginx
    * Nginx https
    * Nginx 配置
    * Nginx 守护进程
+5. Supervisor
 6. Docker
    * 说明
    * 安装

@@ -1,4 +1,4 @@
 #### 让我们一起学Flask
 
-- [Flask Tutorial](1.Flask_Tutorial\README.md)  
-- [Flask 练习](2.Flask_Pratice\README.md)
+- [Flask Tutorial](https://androllen.github.io/2019/05/06/learning-flask.html)
+- [Learning Flask](https://github.com/androllen/HiFlask)
