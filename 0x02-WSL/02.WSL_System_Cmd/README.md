@@ -82,7 +82,13 @@
   sudo adduser androllen  
   ls /home  
 
+* 查看系统位数
+  > sudo uname --m 
 
+* 查看系统版本
+  > cat /etc/issue
+  
+  
 - userdel  -r  用户名
 - useradd -m -s  用户名
 - passwd 用户名
