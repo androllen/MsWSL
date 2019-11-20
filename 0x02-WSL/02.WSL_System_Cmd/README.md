@@ -36,7 +36,13 @@
     红色闪烁：表示链接的文件有问题  
     黄色：表示设备文件  
     灰色：表示其他文件  
-
+    
+* 帮助
+  - Linux
+    Linux Commands + --help
+  - Win
+    Windows Commands + /?
+  
 * 创建文件夹  
   - Linux  
     mkdir + foo
@@ -46,22 +52,28 @@
 
 - 删除文件夹
   - Win  
-    rmdir + foo or rd + foo
-
+    ```
+    # 强制删除非空文件夹
+    rmdir + foo /s /q 
+    rd + foo /s /q
+    ``` 
+    
   - Linux  
-    ``` bash
+    ```
     rmdir + foo
     # 强制删除非空文件夹
     rm -rf 目录名
     ```
-
+    
 * 创建文件  
   - Linux  
     vi + foo  
     touch + foo
 
   - Win  
-     cd>a.txt，type nul>a.txt，copy nul>a.txt 
+     cd>a.txt
+     type nul>a.txt
+     copy nul>a.txt 
 
 - 删除文件
   - Win
@@ -71,33 +83,53 @@
     rm -f file1
 
 - 复制文件夹到文件夹
-  - win
-  - linux
+  - Win
+    xcopy D:\123 C:\456\ /s /f
+  - Linux
     cp -a hiflaskEnv/ /home/androllen/webflask/  
 
 * 快速查找使用过的命令  
+  - Win
+    F7
+  - Linux
     history | grep find
     
-* 添加用户  
-  sudo adduser androllen  
-  ls /home  
+* 添加删除更改用户 
+  - Win
+    ```
+    # 新增
+    net user 用户名 密码 /add
+    # 删除
+    net user 用户名     /delete
+    # 更改用户权限
+    net localgroup administrators 用户名 /add 
+    ```
+  - Linux
+    ```
+    在删除用户之前切换到root
+    ubuntu删除用户同样是在终端下操作的，需要注意的是，如果要删除的用户当前已登陆，是删除不掉的，必须注销掉当前用户切换为另一个用户下，才能删除。举个     例子，刚才我新建立了一个用户为 yang 的用户，例如我现在用用户 yang 登陆了桌面，此时如果我想删除 yang 这个用户，是删除不掉的。正确的操作方法是，     我注销掉yang，然后使用 root 登陆到桌面，再删除 yang 即可。
+    删除ubuntu用户的命令比较容易记：sudo userdel username，例如我想删除 yang ，则输入：sudo userdel yang，删除成功后，系统无任何提示。
+    - userdel  -r  用户名
+    - useradd -m -s  用户名
+    - passwd 用户名
+    ```
+    sudo adduser androllen  
+    ls /home  
+      
 
 * 查看系统位数
-  > sudo uname --m 
+  - Win
+    systeminfo
+  - Linux
+    sudo uname --m 
 
 * 查看系统版本
-  > cat /etc/issue
+  - Win
+    winver
+  - Linux
+    cat /etc/issue
   
   
-- userdel  -r  用户名
-- useradd -m -s  用户名
-- passwd 用户名
-
-* 删除用户
-  在删除用户之前切换到root
-  ubuntu删除用户同样是在终端下操作的，需要注意的是，如果要删除的用户当前已登陆，是删除不掉的，必须注销掉当前用户切换为另一个用户下，才能删除。举个例子，刚才我新建立了一个用户为 yang 的用户，例如我现在用用户 yang 登陆了桌面，此时如果我想删除 yang 这个用户，是删除不掉的。正确的操作方法是，我注销掉 yang，然后使用 root 登陆到桌面，再删除 yang 即可。
-  删除ubuntu用户的命令比较容易记：sudo userdel username，例如我想删除 yang ，则输入：sudo userdel yang，删除成功后，系统无任何提示。
-
 * 切换root
   ``` bash
   # 要求我们输入当前我们的密码 
@@ -107,6 +139,8 @@
   # su是switch user的缩写，表示用户切换
   su 用户名
   ```
+  
+  
 * [下载文件](https://linuxize.com/post/how-to-install-deb-packages-on-ubuntu/)
   > wget --no-check-certificate test.deb  
   > curl -k -O -L test.deb  
