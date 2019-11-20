@@ -118,15 +118,15 @@
       
 
 * 查看系统位数
-  - Win
+  - Win  
     systeminfo
-  - Linux
+  - Linux  
     sudo uname --m 
 
 * 查看系统版本
-  - Win
+  - Win  
     winver
-  - Linux
+  - Linux  
     cat /etc/issue
   
   
