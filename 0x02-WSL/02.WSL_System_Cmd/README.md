@@ -183,7 +183,17 @@
     cat /etc/issue
     ```
   
-  
+* 下载文件
+  - Win
+    ```
+    get-help curl
+    Invoke-WebRequest -Uri "https://github.com/Shadowsocks-4.1.8.0.zip" -OutFile "1.zip"
+    ```
+  - Linux
+    ```
+    curl
+    ```
+    
 * 切换root  
   ``` bash
   # 要求我们输入当前我们的密码 
