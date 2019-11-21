@@ -189,11 +189,11 @@
     get-help curl
     Invoke-WebRequest -Uri https://github.com/Shadowsocks-4.1.8.0.zip -OutFile Shadowsocks-4.1.8.0.zip
     ```
-  - Linux
+  - [Linux](https://linuxize.com/post/how-to-install-deb-packages-on-ubuntu)
     ```
-    curl
-    wget
     apt-get
+    wget --no-check-certificate test.deb  
+    curl -k -O -L test.deb 
     ```
     
 * 切换root  
@@ -224,12 +224,6 @@
       ``` 
       certutil -hashfile D:\1.exe SHA256
       ```
-
-* [下载文件](https://linuxize.com/post/how-to-install-deb-packages-on-ubuntu/)
-  ``` bash
-  wget --no-check-certificate test.deb  
-  curl -k -O -L test.deb 
-  ```
   
 * 安装文件  
   ``` bash
