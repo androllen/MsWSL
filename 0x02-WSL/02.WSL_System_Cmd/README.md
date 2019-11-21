@@ -187,11 +187,13 @@
   - Win
     ```
     get-help curl
-    Invoke-WebRequest -Uri "https://github.com/Shadowsocks-4.1.8.0.zip" -OutFile "1.zip"
+    Invoke-WebRequest -Uri https://github.com/Shadowsocks-4.1.8.0.zip -OutFile Shadowsocks-4.1.8.0.zip
     ```
   - Linux
     ```
     curl
+    wget
+    apt-get
     ```
     
 * 切换root  
