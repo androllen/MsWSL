@@ -1,4 +1,9 @@
-#### Linux 系统命令
+#### Linux & Windows 系统命令
+* 管理员权限  
+  ```
+  sudo + cmd
+  ```
+   
 * 查找命令
     which 执行的可执行文件的完整路径（当前用户）
     ``` bash
@@ -18,17 +23,30 @@
     locate --basename vim
     ```
     
-- 查看所有启动的服务  
+* 查看所有启动的服务  
+  ```
   service --status-all
+  ```
 
 * find 搜索文件夹和文件  
-    sudo find / -type d -mount -name supervisor 
+  ```
+  sudo find / -type d -mount -name supervisor 
+  ```
 
 * ln   
-  软链接： ln -s 源文件 目标文件   
-  硬链接： ln 源文件 目标文件
+  - [Win](https://androllen.github.io/2017/03/07/mklink.html)
+    ```
+    软链接： ln -s 源文件 目标文件   
+    硬链接： ln 源文件 目标文件
+    ```
+  - Linux
+    ```
+    无
+    ```
 
 * ls 颜色命令  
+  - Linux
+    ```
     蓝色：表示目录  
     绿色：表示可执行文件  
     红色：表示压缩文件   
@@ -36,66 +54,148 @@
     红色闪烁：表示链接的文件有问题  
     黄色：表示设备文件  
     灰色：表示其他文件  
-
+    ```
+  - Win
+    ```
+    无
+    ```
+    
+* 帮助
+  - Linux  
+    ```
+    Linux Commands + --help
+    ```
+  - Win  
+    ```
+    Windows Commands + /? or -h
+    ```
+    
 * 创建文件夹  
   - Linux  
-    mkdir + foo
-
-  - Win  
-    mkdir + foo  or md + foo  
-
-- 删除文件夹
-  - Win  
-    rmdir + foo or rd + foo
-
-  - Linux  
-    ``` bash
-    rmdir + foo
-    # 强制删除非空文件夹
-    rm -rf 目录名
+    ```
+    sudo mkdir + foo
     ```
 
+  - Win  
+    ```
+    mkdir + foo  or md + foo  
+    ```
+
+- 删除文件夹  
+  - Win  
+    ``` bash
+    # 强制删除非空文件夹
+    rmdir + foo /s /q 
+    rd + foo /s /q
+    ``` 
+    
+  - Linux  
+    ``` bash
+    sudo  rmdir + foo
+    # 强制删除非空文件夹
+    sudo  rm -rf 目录名
+    ```
+    
 * 创建文件  
   - Linux  
-    vi + foo  
-    touch + foo
+    ```
+    sudo vi + foo  
+    sudo touch + foo
+    ```
 
   - Win  
-     cd>a.txt，type nul>a.txt，copy nul>a.txt 
+    ```
+    cd>a.txt
+    type nul>a.txt
+    copy nul>a.txt 
+    ```
 
-- 删除文件
-  - Win
+- 删除文件  
+  - Win  
+    ```
     del a.txt
+    ```
 
-  - Linux 
-    rm -f file1
+  - Linux  
+    ```
+    sudo rm -f file1
+    ```
 
-- 复制文件夹到文件夹
-  - win
-  - linux
-    cp -a hiflaskEnv/ /home/androllen/webflask/  
+- 复制文件夹到文件夹  
+  - Win  
+    ```
+    xcopy D:\123 C:\456\ /s /f
+    ```
+  - Linux  
+    ```
+    sudo cp -a hiflaskEnv/ /home/androllen/webflask/ 
+    ```
 
 * 快速查找使用过的命令  
+  - Win  
+    ```
+    F7
+    ```
+  - Linux  
+    ```
     history | grep find
+    ```
     
-* 添加用户  
-  sudo adduser androllen  
-  ls /home  
-
-
-- userdel  -r  用户名
-- useradd -m -s  用户名
-- passwd 用户名
-
-
-- 删除用户  
-  - linux
+* 添加删除更改用户  
+  - Win  
     ``` bash
-    # 在删除用户之前先切换到root,再删除用户即可。
-    sudo userdel username
+    # 新增
+    net user 用户名 密码 /add
+    # 删除
+    net user 用户名     /delete
+    # 更改用户权限
+    net localgroup administrators 用户名 /add 
+    ```
+  - Linux  
+    ``` bash
+    在删除用户之前切换到root
+    ubuntu删除用户同样是在终端下操作的，需要注意的是，如果要删除的用户当前已登陆，是删除不掉的，必须注销掉当前用户切换为另一个用户下，才能删除。举个     例子，刚才我新建立了一个用户为 yang 的用户，例如我现在用用户 yang 登陆了桌面，此时如果我想删除 yang 这个用户，是删除不掉的。正确的操作方法是，     我注销掉yang，然后使用 root 登陆到桌面，再删除 yang 即可。
+    删除ubuntu用户的命令比较容易记：sudo userdel username，例如我想删除 yang ，则输入：sudo userdel yang，删除成功后，系统无任何提示。
+    - userdel  -r  用户名
+    - useradd -m -s  用户名
+    - passwd 用户名
+    sudo adduser androllen  
+    ls /home  
+    ```
+      
+* 查看系统位数  
+  - Win  
     ``` 
-   
+    systeminfo
+    ```
+  - Linux  
+    ``` 
+    sudo uname --m
+    ```
 
+* 查看系统版本  
+  - Win  
+    ``` 
+    winver
+    ```
+  - Linux    
+    ``` 
+    cat /etc/issue
+    ```
+  
+* 下载文件
+  - Win
+    ```
+    get-help curl
+    Invoke-WebRequest -Uri https://github.com/Shadowsocks-4.1.8.0.zip -OutFile Shadowsocks-4.1.8.0.zip
+    ```
+  - [Linux](https://linuxize.com/post/how-to-install-deb-packages-on-ubuntu)
+    ```
+    apt-get
+    wget --no-check-certificate test.deb  
+    curl -k -O -L test.deb 
+    ```
+    
 * 切换root
   - linux 
     ``` bash
@@ -106,6 +206,45 @@
     # su是switch user的缩写，表示用户切换
     su 用户名
     ```
+  
+* 文件Hash  
+  - Linux
+    ``` 
+    md5sum filename
+    sha1sum filename
+    sha256sum filename    
+    ```
+   
+  - Win  
+    - PowerShell  
+      ``` 
+      get-filehash
+      ```
+      
+    - cmd  
+      ``` 
+      certutil -hashfile D:\1.exe SHA256
+      ```
+  
+* 安装文件  
+  ``` bash
+  sudo apt install ./test.deb  
+  sudo apt install gdebi / sudo gdebi teamviewer_amd64.deb  
+  sudo dpkg -i test.deb  
+  ```
+
+- 退出  
+  ``` bash
+  # root 从新的用户状态下输入“exit”即可退回到刚才的用户状态
+  exit
+  ```
+
+- 清屏
+  - win  
+  `cls`
+  - linux  
+  `clear`
+
 
 - 快捷键
   - linux
@@ -115,21 +254,7 @@
     # 代表光标处往前和光标处往后删除
     ctrl+u   ctrl+k 
     ```
-
-
-- 清屏
-  - win  
-  `cls`
-  - linux  
-  `clear`
-
-
-- 退出  
-  ``` bash
-  # root 从新的用户状态下输入“exit”即可退回到刚才的用户状态
-  exit
-  ```
-
+      
 
 window下通过新建txt文件然后改成.bat的文件，输入内容后，执行出现中文乱码？  
 原因：  
@@ -145,6 +270,7 @@ chcp 65001
 echo 中文测试
 pause
 ```
+
 小知识了解一下：  
 ``` dos
 doc 代码页(自行百度):
