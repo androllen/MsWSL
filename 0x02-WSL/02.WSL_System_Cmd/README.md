@@ -88,28 +88,48 @@
 - passwd 用户名
 
 
-* 删除用户
-  在删除用户之前切换到root
-  ubuntu删除用户同样是在终端下操作的，需要注意的是，如果要删除的用户当前已登陆，是删除不掉的，必须注销掉当前用户切换为另一个用户下，才能删除。举个例子，刚才我新建立了一个用户为 yang 的用户，例如我现在用用户 yang 登陆了桌面，此时如果我想删除 yang 这个用户，是删除不掉的。正确的操作方法是，我注销掉 yang，然后使用 root 登陆到桌面，再删除 yang 即可。
-  删除ubuntu用户的命令比较容易记：sudo userdel username，例如我想删除 yang ，则输入：sudo userdel yang，删除成功后，系统无任何提示。
+- 删除用户  
+  - linux
+    ``` bash
+    # 在删除用户之前先切换到root,再删除用户即可。
+    sudo userdel username
+    ``` 
+   
 
 * 切换root
+  - linux 
+    ``` bash
+    # 要求我们输入当前我们的密码 
+    sudo su
+    # 将当前用户有普通用户切换到root用户模式中
+    sudo -i
+    # su是switch user的缩写，表示用户切换
+    su 用户名
+    ```
+
+- 快捷键
+  - linux
+    ``` bash
+    # 代表把管标移动到最前和最后 
+    ctrl+a   ctrl+e   
+    # 代表光标处往前和光标处往后删除
+    ctrl+u   ctrl+k 
+    ```
+
+
+- 清屏
+  - win  
+  `cls`
+  - linux  
+  `clear`
+
+
+- 退出  
   ``` bash
-  # 要求我们输入当前我们的密码 
-  sudo su
-  # 将当前用户有普通用户切换到root用户模式中
-  sudo -i
-  # su是switch user的缩写，表示用户切换
-  su 用户名
+  # root 从新的用户状态下输入“exit”即可退回到刚才的用户状态
+  exit
   ```
 
-
-* 退出 root 从新的用户状态下输入“exit”即可退回到刚才的用户状态
-  exit
-
-* 快捷键
-  > ctrl+a   ctrl+e   分别代表把管标移动到最前和最后  
-  > ctrl+u   ctrl+k   分别代表光标处往前和光标处往后删除    
 
 window下通过新建txt文件然后改成.bat的文件，输入内容后，执行出现中文乱码？  
 原因：  
@@ -117,6 +137,7 @@ window下通过新建txt文件然后改成.bat的文件，输入内容后，执�
 解决：  
 1.使用windows自带的记事本编辑，然后另存的时候，可选择编码方式即可。  
 2.在代码里修改执行时的编码格式：
+
 ``` dos
 @echo off
 REM 后续命令使用的是：UTF-8编码
@@ -132,12 +153,11 @@ chcp 936 可以换回默认的GBK
 chcp 437 是美国英语  
 cmd   脚本文件的描述是 “windows nt命令脚本” （年轻人，本是多）
 ```
-
-   
 使用sudo 创建的文件夹具用root权限  
+
 当然也可以更改当前root权限到当前用户权限  
 
 
 
-
 [常用命令](https://www.cnblogs.com/yjd_hycf_space/p/7730690.html)  
+[DOS下文件/文件夹操作](http://www.elecfans.com/baike/wangluo/anfang/20180117617630_2.html)

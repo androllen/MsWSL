@@ -154,6 +154,10 @@
     pipenv uninstall requests
     # pipenv虚拟环境运行python命令
     pipenv run python your_script.py
+    # 安装requirements.txt
+    pipenv install -r requirements.txt
+    # 像virtualenv一样用命令生成requirements 文件
+    pipenv lock -r --dev > requirements.txt
     ```
     设置源  
     Pipfile文件中[source]下面url属性，比如修改成：  
