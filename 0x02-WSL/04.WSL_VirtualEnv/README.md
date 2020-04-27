@@ -1,4 +1,4 @@
-#### Linux 虚拟环境
+### Linux 虚拟环境
 
 - 编辑 
     ```
@@ -74,7 +74,7 @@
     deactivate
     ```
     
-### 卸载 Python2.7 
+- 卸载 Python2.7  
     ```
     # 卸载python2.7
     sudo apt-get remove python2.7
