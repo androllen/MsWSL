@@ -81,9 +81,32 @@
     # 卸载python2.7及其依赖
     sudo apt-get remove --auto-remove python2.7
     # 消除python2.7
-    sudo apt-get purge python2.7 or sudo apt-get purge --auto-remove python2.7
+    sudo apt-get purge python2.7 
+    or
+    sudo apt-get purge --auto-remove python2.7
+    sudo rm -rf /usr/bin/python2.7
     ```
-
+- 设置 python 默认版本为 python3  
+    ``` 
+    sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
+    update-alternatives: using /usr/bin/python3.7 to provide /usr/bin/python (python) in auto mode
+    
+    androllen@DESKTOP-4QBCHIN:/usr/bin$ python
+    Python 3.7.5 (default, Nov  7 2019, 10:50:52)
+    [GCC 8.3.0] on linux
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> 
+    
+    # 设置快捷方式 py3
+    sudo update-alternatives --install /usr/bin/py3 python /usr/bin/python3.7 150
+    update-alternatives: renaming python link from /usr/bin/python to /usr/bin/py3
+    
+    androllen@DESKTOP-4QBCHIN:/usr/bin$ py3
+    Python 3.7.5 (default, Nov  7 2019, 10:50:52)
+    [GCC 8.3.0] on linux
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>>
+    ```
 * Anaconda 命令 
 * <https://www.cnblogs.com/hafiz/p/9085405.html>
 * <https://www.jianshu.com/p/52d848317c17>
