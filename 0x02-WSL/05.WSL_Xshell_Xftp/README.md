@@ -31,7 +31,9 @@
     sudo service ssh start
 
     ```
-    会出现找不到host key  
+    # 会出现找不到host key  
+    sshd: no hostkeys available -- exiting.
+    # 或者
     Could not load host key: /etc/ssh/ssh_host_rsa_key
     Could not load host key: /etc/ssh/ssh_host_ecdsa_key
     Could not load host key: /etc/ssh/ssh_host_ed25519_key
