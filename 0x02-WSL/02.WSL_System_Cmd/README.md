@@ -85,7 +85,9 @@
   - Win  
     ``` bash
     # 强制删除非空文件夹
+    # 管理员权限的时候使用
     rmdir + foo /s /q 
+    
     rd + foo /s /q
     ``` 
     
