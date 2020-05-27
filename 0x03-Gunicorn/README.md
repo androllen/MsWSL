@@ -105,7 +105,7 @@
  - [https://gunicorn.org/](https://gunicorn.org/)
  - [Gunicorn入门](https://www.cnblogs.com/ArtsCrafts/p/gunicorn.html)
  - [Gunicorn专题](https://www.zhihu.com/topic/19810964/hot)
-
+ - [配置](https://www.jianshu.com/p/260f18aa5462)
 
 #### QA
   - Nginx、Gunicorn在服务器中分别起什么作用？
