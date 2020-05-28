@@ -1,12 +1,14 @@
 # 一起学 Windows Subsystem Linux(WSL)搭建 Flask 网站
 
-### 关键词
+## 关键词
+
 Linux flask xshell xftp supervisor ssh python virtualenv Docker Gunicorn Nginx
 
 ### 目标
+
 1. Web前端框架
-   * Flask 
-   * Django 
+   * Flask
+   * Django
 2. WSL(Windows Subsystem for Linux)
    * WSL 安装
    * WSL 系统命令
@@ -38,11 +40,12 @@ Linux flask xshell xftp supervisor ssh python virtualenv Docker Gunicorn Nginx
 8. VPS
 
 #### 链接
+
 [nginx-supervisor-gunicorn-flask](http://www.simpleapples.com/2015/06/11/configure-nginx-supervisor-gunicorn-flask/)  
 
 [flask+nginx+gunicorn](https://baijiahao.baidu.com/s?id=1616440047552092518&wfr=spider&for=pc)  
 
-[在 Ubuntu 上使用 Nginx 部署 Flask 应用 ](https://www.oschina.net/translate/serving-flask-with-nginx-on-ubuntu)  
+[在 Ubuntu 上使用 Nginx 部署 Flask 应用](https://www.oschina.net/translate/serving-flask-with-nginx-on-ubuntu)  
 
 [how-to-deploy-flask-apps](https://blog.igevin.info/posts/how-to-deploy-flask-apps/)
 
