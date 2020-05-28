@@ -277,8 +277,36 @@
 - 查看软件版本
   -linux
   ```
-  # aptitude  show ftp 
+  # aptitude  show ftp
   aptitude show
+  ```
+
+- 挂载与移动数据
+
+  ```sh
+  mount
+  可以看到 Linux mount（挂载）到/mnt/c, /mnt/d中
+
+  rootfs on / type lxfs (rw,noatime)
+  none on /dev type tmpfs (rw,noatime,mode=755)
+  sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,noatime)
+  proc on /proc type proc (rw,nosuid,nodev,noexec,noatime)
+  devpts on /dev/pts type devpts (rw,nosuid,noexec,noatime,gid=5,mode=620)
+  none on /run type tmpfs (rw,nosuid,noexec,noatime,mode=755)
+  none on /run/lock type tmpfs (rw,nosuid,nodev,noexec,noatime)
+  none on /run/shm type tmpfs (rw,nosuid,nodev,noatime)
+  none on /run/user type tmpfs (rw,nosuid,nodev,noexec,noatime,mode=755)
+  binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+  cgroup on /sys/fs/cgroup type tmpfs (rw,relatime,mode=755)
+  cgroup on /sys/fs/cgroup/devices type cgroup (rw,relatime,devices)
+  C:\ on /mnt/c type drvfs (rw,noatime,uid=1000,gid=1000,case=off)
+  D:\ on /mnt/d type drvfs (rw,noatime,uid=1000,gid=1000,case=off)
+
+
+  cd /mnt/d/
+  cd Desktop/
+  sudo mv frp_0.33.0_linux_amd64.tar.gz /etc/frp/
+  cd /etc/frp/
   ```
 
 ### 系统信息 
