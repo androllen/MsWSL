@@ -1,4 +1,4 @@
-# Windows10子系统Ubuntu使用xshell登陆
+# Windows10子系统Ubuntu使用 SSH 登陆
 
 - 切换到ssh配置文件的位置
 
@@ -72,7 +72,7 @@
   ws.run cmd,0
   ```
 
-  1. cd %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
+  1. cd %AppData%\Microsoft\Windows\Start Menu\Programs\Startup or Win + R -> shell:startup
   2. 将上面的脚本，保存为 startWSL.vbs
 
   > 上述脚本存在一个问题，就是执行sudo时，会提示输入密码，而这时又无法拿到用户的输入。要解决这一问题，需要允许sudo在没有密码的情况下执行命令。

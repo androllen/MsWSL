@@ -7,26 +7,26 @@
   ```
 
 - 查找命令
-    which 执行的可执行文件的完整路径（当前用户）
+  which 执行的可执行文件的完整路径（当前用户）
 
-    ``` bash
-    # which vi
-    /usr/bin/vi
-    ```
+  ``` bash
+  # which vi
+  /usr/bin/vi
+  ```
 
 - whereis 搜索二进制、源码和手册页文件
 
-    ``` bash
-    # whereis vi
-    vi: /usr/bin/vi /usr/share/man/man1/vi.1p.gz /usr/share/man/man1/vi.1.gz
-    ```
+  ``` bash
+  # whereis vi
+  vi: /usr/bin/vi /usr/share/man/man1/vi.1p.gz /usr/share/man/man1/vi.1.gz
+  ```
 
 - locate 搜索文件夹和文件
 
-    ``` bash
-    sudo updatedb
-    locate --basename vim
-    ```
+  ``` bash
+  sudo updatedb
+  locate --basename vim
+  ```
 
 - 查看所有启动的服务  
 

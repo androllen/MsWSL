@@ -8,7 +8,7 @@
 
   Python Web开发中，这个标准就是 The Web Server Gateway Interface, 即 WSGI. 这个标准在PEP 333中描述，后来，为了支持 Python 3.x, 并且修正一些问题，新的版本在PEP 3333中描述。
 
-- Website:[http://wsgi.tutorial.codepoint.net/](http://wsgi.tutorial.codepoint.net/)
+  Website: [http://wsgi.tutorial.codepoint.net/](http://wsgi.tutorial.codepoint.net/)
 
 ## WSGI 是什么
 
@@ -34,30 +34,29 @@
 - 各种服务器的可扩展钩子
 - 与Python Python 2.x >= 2.6 or 3.x >= 3.2 兼容
 
-#### 创建
+### 创建
 
   ``` bash
-  # cd 到 run.py
-  pipenv install gunicorn  
+  pip install gunicorn  
   ```
   
-#### 配置文件
+### 配置文件
 
 - 通过脚本启动(未验证)  
-    不能都用默认的配置，因为可能后续还会在扩展，要安装在项目使用的虚拟环境中
+  不能都用默认的配置，因为可能后续还会在扩展，要安装在项目使用的虚拟环境中
 
-    ``` python
-    import os
-    import multiprocessing
+  ``` python
+  import os
+  import multiprocessing
 
-    bind = "127.0.0.1:8000"#此处的地址和绑定的端口 和 Nginx 绑定的地址一样
-    workers = multiprocessing.cpu_count() * 2 + 1 #worker数量
-    backlog=2048
-    debug=True
-    proc_name='gunicorn.pid'
-    pidfile='/var/log/gunicorn/debug.log'
-    loglevel='debug'
-    ```
+  bind = "127.0.0.1:8000"#此处的地址和绑定的端口 和 Nginx 绑定的地址一样
+  workers = multiprocessing.cpu_count() * 2 + 1 #worker数量
+  backlog=2048
+  debug=True
+  proc_name='gunicorn.pid'
+  pidfile='/var/log/gunicorn/debug.log'
+  loglevel='debug'
+  ```
 
   - 命令  
     gunicorn -c deploy_config.py myapp:app
@@ -67,43 +66,43 @@
 - 通过 supervisor 启动
   - 使用virtualenvs
 
-      ``` bash
-      [program:higunicorn]
-      command=/home/androllen/hiflask/hiflaskEnv/bin/python3 /home/androllen/hiflask/hiflaskEnv/bin/gunicorn -w 4 -b 127.0.0.1:8000 myapp:app
-      directory=/home/androllen/hiflask/src
-      autostart=true
-      autorestart=true
-      startsecs=1
-      startretries=3
-      stdout_capture_maxbytes=1MB
-      stderr_capture_maxbytes=1MB
-      stdout_logfile=/var/log/supervisor/higunicorn_out.log
-      stderr_logfile=/var/log/supervisor/higunicorn_err.log
+    ``` bash
+    [program:higunicorn]
+    command=/home/androllen/hiflask/hiflaskEnv/bin/python3 /home/androllen/hiflask/hiflaskEnv/bin/gunicorn -w 4 -b 127.0.0.1:8000 myapp:app
+    directory=/home/androllen/hiflask/src
+    autostart=true
+    autorestart=true
+    startsecs=1
+    startretries=3
+    stdout_capture_maxbytes=1MB
+    stderr_capture_maxbytes=1MB
+    stdout_logfile=/var/log/supervisor/higunicorn_out.log
+    stderr_logfile=/var/log/supervisor/higunicorn_err.log
 
-      ```
+    ```
 
   - 使用pipenv
 
-      ``` bash
-          sudo find -type f -mount -name gunicorn
-          /home/androllen/.local/share/virtualenvs/hiflask-sYW1TGXP/bin/gunicorn
-      ```  
+    ``` bash
+        sudo find -type f -mount -name gunicorn
+        /home/androllen/.local/share/virtualenvs/hiflask-sYW1TGXP/bin/gunicorn
+    ```  
 
-      ``` bash
-      [program:higunicorn]
-      command=/home/androllen/.local/share/virtualenvs/webflask-sYW1TGXP/bin/python3 /home/androllen/.local/share/virtualenvs/webflask-sYW1TGXP/bin/gunicorn -w 4 -b 127.0.0.1:8000 run:app
-      directory=/home/androllen/hiflask/src
-      autostart=true
-      autorestart=true
-      startsecs=1
-      startretries=3
-      stdout_capture_maxbytes=1MB
-      stderr_capture_maxbytes=1MB
-      stdout_logfile=/var/log/supervisor/higunicorn_out.log
-      stderr_logfile=/var/log/supervisor/higunicorn_err.log
-      ```
+    ``` bash
+    [program:higunicorn]
+    command=/home/androllen/.local/share/virtualenvs/webflask-sYW1TGXP/bin/python3 /home/androllen/.local/share/virtualenvs/webflask-sYW1TGXP/bin/gunicorn -w 4 -b 127.0.0.1:8000 run:app
+    directory=/home/androllen/hiflask/src
+    autostart=true
+    autorestart=true
+    startsecs=1
+    startretries=3
+    stdout_capture_maxbytes=1MB
+    stderr_capture_maxbytes=1MB
+    stdout_logfile=/var/log/supervisor/higunicorn_out.log
+    stderr_logfile=/var/log/supervisor/higunicorn_err.log
+    ```
 
-#### 相关链接
+### 相关链接
 
 - [Wsgi介绍](https://blog.csdn.net/on_1y/article/details/18803563)
 - [百度百科](https://baike.baidu.com/item/wsgi)
@@ -113,14 +112,14 @@
 - [Gunicorn专题](https://www.zhihu.com/topic/19810964/hot)
 - [配置](https://www.jianshu.com/p/260f18aa5462)
 
-#### QA
+### QA
 
 - Nginx、Gunicorn在服务器中分别起什么作用？
-    [参考地址](https://www.zhihu.com/question/38528616)
+  [参考地址](https://www.zhihu.com/question/38528616)
   
 - can't find command 'gunicorn'
-    我不知道是不是我坑
-    创建的虚拟环境里 gunicorn 竟然不能使用，我使用的是pipenv install gunicorn
-    好像是 没有映射到虚拟环境里。
-    解决方法：
-    使用绝对路径 /home/androllen/.local/share/virtualenvs/webflask-sYW1TGXP/bin/python3 /home/androllen/.local/share/virtualenvs/webflask-sYW1TGXP/bin/gunicorn
+  我不知道是不是我坑
+  创建的虚拟环境里 gunicorn 竟然不能使用，我使用的是pipenv install gunicorn
+  好像是 没有映射到虚拟环境里。
+  解决方法：
+  使用绝对路径 /home/androllen/.local/share/virtualenvs/webflask-sYW1TGXP/bin/python3 /home/androllen/.local/share/virtualenvs/webflask-sYW1TGXP/bin/gunicorn
