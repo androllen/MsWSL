@@ -1,6 +1,19 @@
 # Linux & Windows 系统命令
 
-- 管理员权限  
+- 帮助
+  - Linux
+
+    ``` sh
+    Linux Commands + --help
+    ```
+
+  - Win
+
+    ``` sh
+    Windows Commands + /? or -h
+    ```
+
+- 管理员权限
 
   ``` sh
   sudo + cmd
@@ -28,13 +41,13 @@
   locate --basename vim
   ```
 
-- 查看所有启动的服务  
+- 查看所有启动的服务
 
   ``` sh
   service --status-all
   ```
 
-- find 搜索文件夹和文件  
+- find 搜索文件夹和文件
 
   ``` sh
   sudo find / -type d -mount -name supervisor
@@ -55,17 +68,17 @@
     无
     ```
 
-- ls 颜色命令  
+- ls 颜色命令
   - Linux
 
     ``` sh
-    蓝色：表示目录  
-    绿色：表示可执行文件  
+    蓝色：表示目录
+    绿色：表示可执行文件
     红色：表示压缩文件
-    浅蓝色：链接文件  
-    红色闪烁：表示链接的文件有问题  
-    黄色：表示设备文件  
-    灰色：表示其他文件  
+    浅蓝色：链接文件
+    红色闪烁：表示链接的文件有问题
+    黄色：表示设备文件
+    灰色：表示其他文件
     ```
 
   - Win
@@ -74,34 +87,21 @@
     无
     ```
 
-- 帮助
-  - Linux  
-
-    ``` sh
-    Linux Commands + --help
-    ```
-
-  - Win  
-
-    ``` sh
-    Windows Commands + /? or -h
-    ```
-
-- 创建文件夹  
-  - Linux  
+- 创建文件夹
+  - Linux
 
     ``` sh
     sudo mkdir + foo
     ```
 
-  - Win  
+  - Win
 
     ``` sh
-    mkdir + foo  or md + foo  
+    mkdir + foo  or md + foo
     ```
 
 - 删除文件夹
-  - Win  
+  - Win
 
     ``` bash
     # 强制删除非空文件夹
@@ -111,7 +111,7 @@
     rd + foo /s /q
     ```
 
-  - Linux  
+  - Linux
 
     ``` bash
     sudo  rmdir + foo
@@ -119,16 +119,16 @@
     sudo  rm -rf 目录名
     ```
 
-- 创建文件  
-  - Linux  
+- 创建文件
+  - Linux
 
     ```sh
-    # 使用sudo 创建的文件夹具用root权限当然也可以更改当前root权限到当前用户权限  
-    sudo vi + foo  
+    # 使用sudo 创建的文件夹具用root权限当然也可以更改当前root权限到当前用户权限
+    sudo vi + foo
     sudo touch + foo
     ```
 
-  - Win  
+  - Win
 
     ```sh
     cd>a.txt
@@ -136,47 +136,47 @@
     copy nul>a.txt
     ```
 
-- 删除文件  
+- 删除文件
   - Win bash
 
     ``` sh
     del a.txt
     ```
 
-  - Linux  
+  - Linux
 
     ```bash
     sudo rm -f file1
     ```
 
-- 复制文件夹到文件夹  
-  - Win  
+- 复制文件夹到文件夹
+  - Win
 
     ```bash
     xcopy D:\123 C:\456\ /s /f
     ```
 
-  - Linux  
+  - Linux
 
     ```  bash
     sudo cp -a hiflaskEnv/ /home/androllen/webflask/
     ```
 
-- 快速查找使用过的命令  
-  - Win  
+- 快速查找使用过的命令
+  - Win
 
     ```bash
     F7
     ```
 
-  - Linux  
+  - Linux
 
     ```bash
     history | grep find
     ```
 
-- 添加删除更改用户  
-  - Win  
+- 添加删除更改用户
+  - Win
 
     ``` bash
     # 新增
@@ -187,7 +187,7 @@
     net localgroup administrators 用户名 /add
     ```
 
-  - Linux  
+  - Linux
 
     ``` bash
     在删除用户之前切换到root
@@ -196,25 +196,25 @@
     - userdel  -r  用户名
     - useradd -m -s  用户名
     - passwd 用户名
-    sudo adduser androllen  
-    ls /home  
+    sudo adduser androllen
+    ls /home
     ```
 
-- 查看系统位数  
-  - Win  
+- 查看系统位数
+  - Win
 
     ```bash
     systeminfo
     ```
 
-  - Linux  
+  - Linux
 
     ```bash
     sudo uname --m
     ```
 
-- 查看系统版本  
-  - Win  
+- 查看系统版本
+  - Win
 
     ```bash
     winver
@@ -225,8 +225,8 @@
     ```bash
     cat /etc/issue
     ```
-  
-- 下载文件
+
+- 下载安装
   - Win
 
     ```bash
@@ -237,18 +237,34 @@
   - [Linux](https://linuxize.com/post/how-to-install-deb-packages-on-ubuntu)
 
     ```bash
-    # 安装/更新一个 deb 包
-    apt-get install package_name
-    # 升级列表中的软件包
+    # 升级列表中的软件
     apt-get update
-    # 升级所有已安装的软件
+    # 升级所有已安装的包
     apt-get upgrade
-    # 从系统删除一个deb包
-    apt-get remove package_name
+    # 安装/更新一个软件
+    apt-get install package_name
+    # 安装 deb 包
+    dpkg -i package_name.deb
+    ```
+
+- 卸载
+  - Linux
+
+    ``` sh
+    # 卸载软件并清除配置
+    sudo apt-get remove --purge package_name
+    # 连同配置文件一起删除
+    dpkg -r --purge package_name.deb
+
     # 从下载的软件包中清理缓存
     apt-get clean
-    wget --no-check-certificate test.deb  
+    wget --no-check-certificate test.deb
+
     curl -k -O -L test.deb
+    # 清理系统：
+    sudo apt-get autoclean
+    sudo apt-get clean
+    sudo apt-get autoremove
     ```
 
 - 切换root
@@ -262,8 +278,8 @@
     # su是switch user的缩写，表示用户切换
     su 用户名
     ```
-  
-- 文件Hash  
+
+- 文件Hash
   - Linux
 
     ```bash
@@ -272,28 +288,28 @@
     sha256sum filename
     ```
 
-  - Win  
-    - PowerShell  
+  - Win
+    - PowerShell
 
       ```bash
       get-filehash
       ```
 
-    - cmd  
+    - cmd
 
       ```bash
       certutil -hashfile D:\1.exe SHA256
       ```
-  
-- 安装文件  
+
+- 安装文件
 
   ``` bash
-  sudo apt install ./test.deb  
-  sudo apt install gdebi / sudo gdebi teamviewer_amd64.deb  
-  sudo dpkg -i test.deb  
+  sudo apt install ./test.deb
+  sudo apt install gdebi / sudo gdebi teamviewer_amd64.deb
+  sudo dpkg -i test.deb
   ```
 
-- 退出  
+- 退出
 
   ``` bash
   # root 从新的用户状态下输入“exit”即可退回到刚才的用户状态
@@ -301,9 +317,9 @@
   ```
 
 - 清屏
-  - win  
+  - win
   `cls`
-  - linux  
+  - linux
   `clear`
 
 - 快捷键
@@ -387,7 +403,7 @@
   ```
 
 - 关机并重启
-  - Linux  
+  - Linux
 
     ``` sh
     # 重启
@@ -400,7 +416,7 @@
     shutdown -c
     ```
 
-  - Win  
+  - Win
 
     ``` sh
     # 重启
@@ -414,21 +430,21 @@
     ```
 
 - 权限
-  - Linux  
+  - Linux
 
     ``` sh
     # 显示权限
     ls -lh
     ```
 
-  - Win  
+  - Win
 
     ``` sh
 
     ```
 
 - 压缩并解压
-  - Linux  
+  - Linux
 
     ``` sh
     # 压缩并移除源文件
@@ -447,47 +463,47 @@
     tar -zxvf archive.tar.gz
     ```
 
-  - Win  
+  - Win
 
     ``` sh
     7.zip
     ```
 
 - 文件格式转换
-  - Linux  
+  - Linux
 
     ``` sh
     dos2unix filedos.txt fileunix.txt 将一个文本文件的格式从MSDOS转换成UNIX
     unix2dos fileunix.txt filedos.txt 将一个文本文件的格式从UNIX转换成MSDOS
     ```
 
-  - Win  
+  - Win
 
     ``` sh
 
     ```
 
 - 备份
-  - Linux  
+  - Linux
 
     ``` sh
     rsync
     ```
 
-  - Win  
+  - Win
 
     ``` sh
 
     ```
 
 - 网络
-  - Linux  
+  - Linux
 
     ``` sh
     rsync
     ```
 
-  - Win  
+  - Win
 
     ``` sh
     ifconfig
@@ -495,11 +511,11 @@
 
 ## 问题
 
-- window下通过新建txt文件然后改成.bat的文件，输入内容后，执行出现中文乱码？  
-  - 原因：  
-  批处理文件，是以ANSI编码方式。若以别的方式（如UTF-8）编辑了批处理，转换成ANSI格式即可，正常创建的文件的格式都是utf-8的。  
-  - 解决：  
-  1.使用windows自带的记事本编辑，然后另存的时候，可选择编码方式即可。  
+- window下通过新建txt文件然后改成.bat的文件，输入内容后，执行出现中文乱码？
+  - 原因：
+  批处理文件，是以ANSI编码方式。若以别的方式（如UTF-8）编辑了批处理，转换成ANSI格式即可，正常创建的文件的格式都是utf-8的。
+  - 解决：
+  1.使用windows自带的记事本编辑，然后另存的时候，可选择编码方式即可。
   2.在代码里修改执行时的编码格式：
 
   ``` dos
@@ -510,13 +526,13 @@
   pause
   ```
 
-小知识了解一下：  
+小知识了解一下：
 
 ``` dos
 doc 代码页(自行百度):
 chcp 65001  就是换成UTF-8代码页
 chcp 936 可以换回默认的GBK
-chcp 437 是美国英语  
+chcp 437 是美国英语
 cmd   脚本文件的描述是 “windows nt命令脚本” （年轻人，本是多）
 ```
 

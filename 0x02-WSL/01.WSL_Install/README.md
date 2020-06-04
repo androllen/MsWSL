@@ -7,7 +7,7 @@
 * 控制面板启用 WSL
     > 控制面板\程序\程序和功能  
     > ![WSL](Assets/Snipaste_2019-05-14_10-24-01.png)
-* [安装WSL](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10)
+* [安装WSL](https://www.microsoft.com/store/productId/9NBLGGH4MSV6)
     > 使用 win10 自带的Microsoft Store应用商店搜索WSL，然后选择自己想要安装的Linux发行版。点击获取，就会自动开始在win10中下载,WSL只能安装在C盘里面  
     > ![win10](Assets/Snipaste_2019-05-14_10-37-04.png)
 

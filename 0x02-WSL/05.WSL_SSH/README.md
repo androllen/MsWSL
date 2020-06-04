@@ -20,17 +20,29 @@
   - 没有打开
 
     ```sh
-    Port 22  #修改端口
-    ListenAddress 127.0.0.1  #打开本地监听
-    PasswordAuthentication yes  #修改登陆的方式，允许密码登陆
+    # 修改端口
+    Port 22
+    # 打开本地监听
+    ListenAddress 127.0.0.1
+    or
+    # 打开局域网监听
+    ListenAddress 0.0.0.0
+    # 修改登陆的方式，允许密码登陆
+    PasswordAuthentication yes
     ```
 
   - 打开
 
     ```sh
-    Port 2232  #修改端口，原来的22端口已经存在
-    ListenAddress 0.0.0.0  #打开本地监听
-    PasswordAuthentication yes  #修改登陆的方式，允许密码登陆
+    # 修改端口，原来的22端口已经存在
+    Port 2232
+    # 打开本地监听
+    ListenAddress 127.0.0.1
+    or
+    # 打开局域网监听
+    ListenAddress 0.0.0.0
+    # 修改登陆的方式，允许密码登陆
+    PasswordAuthentication yes
     ```
 
 - 启动SSH
@@ -54,11 +66,19 @@
 
   sudo service ssh restart
 
+- [设置用户名高亮](https://www.linuxidc.com/Linux/2017-10/147438.htm)
+
+  ```sh
+  echo "export PS1='[\e[32;40m\e[1m\u\e[32;40m\e[1m@\e[32;40m\e[1m\h\e[0m \e[32;40m\e[1m\W\e[0m]\$'" >> .bashrc
+  source .bashrc
+  ```
+
 - 配置SSH自动启动
 
   sudo systemctl enable ssh
 
 - check ssh auto status
+
   sudo systemctl is-enabled ssh
 
 - 运行为windows后台进程
@@ -104,18 +124,13 @@
   9. [文件下载][taskvbs_id]
   10. 或者选择导入
 
-- 重启Windows
+- 重启 Windows
 
 ## 相关连接
 
-[在wsl下安装使用sshd全攻略](https://hbaaron.github.io/blog_2017/%E5%9C%A8wsl%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8sshd%E5%85%A8%E6%94%BB%E7%95%A5)
-[使用xshell登陆](https://blog.csdn.net/tengchengbaba/article/details/85481145)
-[https://www.cnblogs.com/seekwind/p/10256262.html](https://www.cnblogs.com/seekwind/p/10256262.html)
-[https://www.cnblogs.com/ACDIV/p/9047825.html](https://www.cnblogs.com/ACDIV/p/9047825.html)
-
-[在wsl下安装使用sshd全攻略](https://hbaaron.github.io/blog_2017/%E5%9C%A8wsl%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8sshd%E5%85%A8%E6%94%BB%E7%95%A5)
-[使用xshell登陆](https://blog.csdn.net/tengchengbaba/article/details/85481145)
-[https://www.cnblogs.com/seekwind/p/10256262.html](https://www.cnblogs.com/seekwind/p/10256262.html)
+[在wsl下安装使用sshd全攻略](https://hbaaron.github.io/blog_2017/%E5%9C%A8wsl%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8sshd%E5%85%A8%E6%94%BB%E7%95%A5)  
+[使用xshell登陆](https://blog.csdn.net/tengchengbaba/article/details/85481145)  
+[https://www.cnblogs.com/seekwind/p/10256262.html](https://www.cnblogs.com/seekwind/p/10256262.html)  
 [https://www.cnblogs.com/ACDIV/p/9047825.html](https://www.cnblogs.com/ACDIV/p/9047825.html)
 
 [wslvbs_id]: Assets/startWSL.vbs

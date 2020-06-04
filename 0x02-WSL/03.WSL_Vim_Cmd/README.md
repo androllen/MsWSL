@@ -32,10 +32,9 @@ i                   -编辑
 
 ## QA
 
-``` bash
-Q:
-shell returned 127
-Press ENTER or type command to continue
-A:
+- shell returned 127
+Press ENTER or type command to continue  
 :q!
-```
+
+- e45 'readonly' option is set (add to override)  
+:qa!
