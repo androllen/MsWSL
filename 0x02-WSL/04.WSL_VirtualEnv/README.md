@@ -144,6 +144,7 @@
   # 卸载 python
   rpm -qa|grep python2.7 | xargs rpm -ev --allmatches --nodeps
 
+  
   # 删除所有残余文件
   whereis python2.7 | xargs rm -frv
   ```
