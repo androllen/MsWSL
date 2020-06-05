@@ -66,12 +66,36 @@
 
   sudo service ssh restart
 
-- [设置用户名高亮](https://www.linuxidc.com/Linux/2017-10/147438.htm)
+- [设置用户名高亮](https://askubuntu.com/questions/123268/changing-colors-for-user-host-directory-information-in-terminal-command-prompt)
 
   ```sh
-  echo "export PS1='[\e[32;40m\e[1m\u\e[32;40m\e[1m@\e[32;40m\e[1m\h\e[0m \e[32;40m\e[1m\W\e[0m]\$'" >> .bashrc
-  source .bashrc
+  cd $HOME
+  sudo vim .bashrc
   ```
+
+  1. 找到带有 `#force_color_prompt=yes` 去掉 `#`
+  1. 找到下面含有 `if [ "$color_prompt" = yes ]; then`
+
+    ```sh
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    ```
+
+  1. 替换上面 PS1
+
+    ```sh
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;36m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    ```
+
+    ```sh
+    Black       0;30     Dark Gray     1;30
+    Blue        0;34     Light Blue    1;34
+    Green       0;32     Light Green   1;32
+    Cyan        0;36     Light Cyan    1;36
+    Red         0;31     Light Red     1;31
+    Purple      0;35     Light Purple  1;35
+    Brown       0;33     Yellow        1;33
+    Light Gray  0;37     White         1;37  
+    ```
 
 - 配置SSH自动启动
 
