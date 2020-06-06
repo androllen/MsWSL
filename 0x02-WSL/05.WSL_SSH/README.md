@@ -70,32 +70,31 @@
 
   ```sh
   cd $HOME
+  cp .bashrc .bashrc.bak
   sudo vim .bashrc
   ```
 
-  1. 找到带有 `#force_color_prompt=yes` 去掉 `#`
-  1. 找到下面含有 `if [ "$color_prompt" = yes ]; then`
+  找到带有 `#force_color_prompt=yes` 去掉 `#`  
+  找到下面含有 `if [ "$color_prompt" = yes ]; then` 前面加 `#`
 
-    ```sh
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    ```
+  ``` sh
+  # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  # 替换上面 PS1
+  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;36m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  # 更新配置
+  source .bashrc
+  ```
 
-  1. 替换上面 PS1
-
-    ```sh
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;36m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    ```
-
-    ```sh
-    Black       0;30     Dark Gray     1;30
-    Blue        0;34     Light Blue    1;34
-    Green       0;32     Light Green   1;32
-    Cyan        0;36     Light Cyan    1;36
-    Red         0;31     Light Red     1;31
-    Purple      0;35     Light Purple  1;35
-    Brown       0;33     Yellow        1;33
-    Light Gray  0;37     White         1;37  
-    ```
+  ```sh
+  Black       0;30     Dark Gray     1;30
+  Blue        0;34     Light Blue    1;34
+  Green       0;32     Light Green   1;32
+  Cyan        0;36     Light Cyan    1;36
+  Red         0;31     Light Red     1;31
+  Purple      0;35     Light Purple  1;35
+  Brown       0;33     Yellow        1;33
+  Light Gray  0;37     White         1;37  
+  ```
 
 - 配置SSH自动启动
 
@@ -105,57 +104,50 @@
 
   sudo systemctl is-enabled ssh
 
-- 运行为windows后台进程
-
-  当前WSL并不支持ssh server作为服务运行。
-  [文件下载][wslvbs_id]
+- 运行 SSH 服务
+  
+  ```sh
+  # 添加 sudoers 文件的写权限
+  sudo chmod u+w /etc/sudoers
+  sudo vim /etc/sudoers
+  # 在最后一行输入 ( androllen 安装 wsl 时你的用户名)
+  androllen =(ALL) NOPASSWD: /usr/sbin/service
+  # 撤销 sudoers 文件写权限
+  sudo hmod u-w /etc/sudoers
+  ```
 
   ```sh
+  bash.exe -c 'sudo service ssh start'
+  or
+  wsl.exe -u androllen sudo service ssh start
+  ```
+
+  ```sh
+  # cd %AppData%\Microsoft\Windows\Start Menu\Programs\Startup or Win + R -> shell:startup
+  # save startWSL.vbs
   set ws=wscript.createobject("wscript.shell")
   cmd = "C:\Windows\System32\bash.exe -c 'sudo /usr/sbin/service ssh start'"
   ws.run cmd,0
   ```
 
-  1. cd %AppData%\Microsoft\Windows\Start Menu\Programs\Startup or Win + R -> shell:startup
-  2. 将上面的脚本，保存为 startWSL.vbs
-
-  > 上述脚本存在一个问题，就是执行sudo时，会提示输入密码，而这时又无法拿到用户的输入。要解决这一问题，需要允许sudo在没有密码的情况下执行命令。
-  > 我们需要借助windows计划任务和脚本，使得在windows启动时自动运行这一服务。
-
-- 添加 sudo 无密码权限：
-
-  ```sh
-  #includedir /etc/sudoers.d
-  $username ALL=(ALL) NOPASSWD: /usr/sbin/service
-  ```
-
-  这里的$username即wsl子系统中的一个用户名。我使用了安装wsl时给出的一个用户名
-
-  1. cd C:\Users\\%USERNAME%\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\etc
-  1. start .
-  1. 将上面的脚本,插入至 sudoers
-
 - 打开任务计划程序
 
-  1. Win + R
-  2. taskschd.msc
-  3. ![home](Assets/Snipaste_2019-05-14_13-25-18.png)
-  4. ![input](Assets/Snipaste_2019-05-14_13-27-21.png)
-  5. ![task](Assets/Snipaste_2019-05-14_13-28-45.png)
-  6. ![start](Assets/Snipaste_2019-05-14_13-31-08.png)
-  7. ![vbs](Assets/Snipaste_2019-05-14_13-31-40.png)
-  8. ![complete](Assets/Snipaste_2019-05-14_13-32-02.png)
-  9. [文件下载][taskvbs_id]
-  10. 或者选择导入
-
-- 重启 Windows
+  - Win + R
+  - taskschd.msc
+  - ![home](Assets/Snipaste_2019-05-14_13-25-18.png)
+  - ![input](Assets/Snipaste_2019-05-14_13-27-21.png)
+  - ![task](Assets/Snipaste_2019-05-14_13-28-45.png)
+  - ![start](Assets/Snipaste_2019-05-14_13-31-08.png)
+  - ![vbs](Assets/Snipaste_2019-05-14_13-31-40.png)
+  - ![complete](Assets/Snipaste_2019-05-14_13-32-02.png)
+  - [文件下载][taskvbs_id]
+  - 或者选择导入
+  - 重启 Windows
 
 ## 相关连接
 
-[在wsl下安装使用sshd全攻略](https://hbaaron.github.io/blog_2017/%E5%9C%A8wsl%E4%B8%8B%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8sshd%E5%85%A8%E6%94%BB%E7%95%A5)  
-[使用xshell登陆](https://blog.csdn.net/tengchengbaba/article/details/85481145)  
-[https://www.cnblogs.com/seekwind/p/10256262.html](https://www.cnblogs.com/seekwind/p/10256262.html)  
-[https://www.cnblogs.com/ACDIV/p/9047825.html](https://www.cnblogs.com/ACDIV/p/9047825.html)
+[开启ssh服务](https://www.cnblogs.com/seekwind/p/10256262.html)  
+[Xshell通过ssh连接Linux](https://www.cnblogs.com/ACDIV/p/9047825.html)
 
 [wslvbs_id]: Assets/startWSL.vbs
 [taskvbs_id]: Assets/AutoService.xml

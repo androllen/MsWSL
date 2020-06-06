@@ -523,31 +523,4 @@
 | apt list         |                           | 列出包含条件的包（已安装，可升级等） |
 | apt edit-sources |                           | 编辑源列表                           |
 
-## 问题
-
-- window下通过新建txt文件然后改成.bat的文件，输入内容后，执行出现中文乱码？
-  - 原因：
-  批处理文件，是以ANSI编码方式。若以别的方式（如UTF-8）编辑了批处理，转换成ANSI格式即可，正常创建的文件的格式都是utf-8的。
-  - 解决：
-  1.使用windows自带的记事本编辑，然后另存的时候，可选择编码方式即可。
-  2.在代码里修改执行时的编码格式：
-
-  ``` dos
-  @echo off
-  REM 后续命令使用的是：UTF-8编码
-  chcp 65001
-  echo 中文测试
-  pause
-  ```
-
-小知识了解一下：
-
-``` dos
-doc 代码页(自行百度):
-chcp 65001  就是换成UTF-8代码页
-chcp 936 可以换回默认的GBK
-chcp 437 是美国英语
-cmd   脚本文件的描述是 “windows nt命令脚本” （年轻人，本是多）
-```
-
 [DOS下文件/文件夹操作](http://www.elecfans.com/baike/wangluo/anfang/20180117617630_2.html)
