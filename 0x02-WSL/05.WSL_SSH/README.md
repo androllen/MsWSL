@@ -113,7 +113,7 @@
   # 在最后一行输入 ( androllen 安装 wsl 时你的用户名)
   androllen =(ALL) NOPASSWD: /usr/sbin/service
   # 撤销 sudoers 文件写权限
-  sudo hmod u-w /etc/sudoers
+  sudo chmod u-w /etc/sudoers
   ```
 
   ```sh
