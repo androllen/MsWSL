@@ -111,7 +111,10 @@
   sudo chmod u+w /etc/sudoers
   sudo vim /etc/sudoers
   # 在最后一行输入 ( androllen 安装 wsl 时你的用户名)
-  androllen =(ALL) NOPASSWD: /usr/sbin/service
+  androllen ALL=(ALL) NOPASSWD: /usr/sbin/service
+  or
+  # C:\Users\%USERNAME%\AppData\Local\Packages
+  androllen ALL=(ALL) NOPASSWD: ALL
   # 撤销 sudoers 文件写权限
   sudo chmod u-w /etc/sudoers
   ```
