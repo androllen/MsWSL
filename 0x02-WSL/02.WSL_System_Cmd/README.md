@@ -448,15 +448,15 @@
 
     ``` sh
     # 压缩并移除源文件
-    gzip 1.md
-    gunzip 1.md.gz
+    gzip filename.md
+    gunzip filename.md.gz
     # 压缩并移除源文件
-    bzip2 2.md
-    bunzip2 2.md.bz2
-    # 压缩单文件
-    tar -cvf 1.tar file1
+    bzip2 filename.md
+    bunzip2 filename.md.bz2
+    # 压缩单文件 /指定的目录下压缩  /压缩目录下的文件
+    tar -cvf /home/filename.tar /home/filename
     # 多文件
-    tar -cvf 1.tar file1 file2 dir1
+    tar -cvf /home/filename.tar /home/filename /home/DirectoryName
     # 显示包里包含的文件
     tar -tf archive.tar
     # 解压一个gzip格式的压缩包
