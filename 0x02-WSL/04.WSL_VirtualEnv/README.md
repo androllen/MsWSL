@@ -1,4 +1,6 @@
-# Linux 虚拟环境
+---
+title: Linux 虚拟环境 
+---
 
 - 编辑
 
@@ -30,25 +32,25 @@
   python3 --version
   ```
 
-  - 安装其他版本 python3
+- 安装其他版本 python3
 
-    ```sh
-    #
-    cd /home/androllen
-    wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz
-    tar -zxvf Python-3.7.5.tgz
-    cd Python-3.7.5
-    # 创建安装目录
-    mkdir -p /usr/lib/python3.7
-    # 安装配置
-    ./configure --prefix=/usr/lib/python3.7
-    # 编译
-    make
-    # 安装
-    make install
-    # 建立 Python3 的软链:
-    ln -s /usr/lib/python3.7/ /usr/bin/python3.7
-    ```
+  ```sh
+  #
+  cd /home/androllen
+  wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz
+  tar -zxvf Python-3.7.5.tgz
+  cd Python-3.7.5
+  # 创建安装目录
+  mkdir -p /usr/lib/python3.7
+  # 安装配置
+  ./configure --prefix=/usr/lib/python3.7
+  # 编译
+  make
+  # 安装
+  make install
+  # 建立 Python3 的软链:
+  ln -s /usr/lib/python3.7/ /usr/bin/python3.7
+  ```
 
 - 安装 PIP
 
@@ -71,6 +73,7 @@
   ```
 
 - 更换 PIP 源
+
   清华：<https://pypi.tuna.tsinghua.edu.cn/simple>
 
   阿里云：<http://mirrors.aliyun.com/pypi/simple/>
@@ -78,7 +81,10 @@
   中国科技大学 <https://pypi.mirrors.ustc.edu.cn/simple/>
 
 - 更换方法
-  - 可以在使用pip的时候加参数-i <https://pypi.tuna.tsinghua.edu.cn/simple>
+
+  - 可以在使用pip的时候加参数
+
+    `pip install -i https://pypi.tuna.tsinghua.edu.cn/simple django`
 
   - Linux
 

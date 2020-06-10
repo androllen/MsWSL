@@ -1,4 +1,6 @@
-# 安装WSL
+---
+title: 安装WSL  
+---
 
 * 命令行启用WSL
     > 用管理员方式打开PowerShell 然后运行如下命令  
@@ -6,16 +8,17 @@
 
 * 控制面板启用 WSL
     > 控制面板\程序\程序和功能  
-    > ![WSL](Assets/Snipaste_2019-05-14_10-24-01.png)
+    > ![WSL](Assets/20190514102401.png)
+
 * [安装WSL](https://www.microsoft.com/store/productId/9NBLGGH4MSV6)
     > 使用 win10 自带的Microsoft Store应用商店搜索WSL，然后选择自己想要安装的Linux发行版。点击获取，就会自动开始在win10中下载,WSL只能安装在C盘里面  
-    > ![win10](Assets/Snipaste_2019-05-14_10-37-04.png)
+    > ![win10](Assets/20190514103704.png)
 
 * [打开WSL](https://docs.microsoft.com/zh-cn/windows/wsl/initialize-distro)  
     首次打开后会提示正在安装......  
     接着会让配置用户和密码  
     > 如果习惯使用CMD或者PowerShell的童鞋也可以直接在命令提示符中输入 bash 直接开启WSL。  
-    > ![bash](Assets/Snipaste_2019-05-14_10-46-28.png)
+    > ![bash](Assets/20190514104628.png)
 
 * 使用wslconfig命令
 
@@ -30,7 +33,7 @@
     wslconfig /list
     ```
 
-    ![cmd](Assets/Snipaste_2019-05-14_10-50-56.png)
+    ![cmd](Assets/20190514105056.png)
 
 ## 链接  
 

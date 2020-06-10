@@ -1,4 +1,6 @@
-# Windows10子系统Ubuntu使用 SSH 登陆
+---
+title: Windows10子系统Ubuntu使用 SSH 登陆
+---
 
 - 切换到ssh配置文件的位置
 
@@ -138,17 +140,15 @@
 
   - Win + R
   - taskschd.msc
-  - ![home](Assets/Snipaste_2019-05-14_13-25-18.png)
-  - ![input](Assets/Snipaste_2019-05-14_13-27-21.png)
-  - ![task](Assets/Snipaste_2019-05-14_13-28-45.png)
-  - ![start](Assets/Snipaste_2019-05-14_13-31-08.png)
-  - ![vbs](Assets/Snipaste_2019-05-14_13-31-40.png)
-  - ![complete](Assets/Snipaste_2019-05-14_13-32-02.png)
+  - ![home](Assets/20190514132518.png)
+  - ![input](Assets/20190514132721.png)
+  - ![task](Assets/20190514132845.png)
+  - ![start](Assets/20190514133108.png)
+  - ![vbs](Assets/20190514133140.png)
+  - ![complete](Assets/20190514133202.png)
   - [文件下载][taskvbs_id]
   - 或者选择导入
   - 重启 Windows
-
-## 相关连接
 
 [开启ssh服务](https://www.cnblogs.com/seekwind/p/10256262.html)  
 
