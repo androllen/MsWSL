@@ -104,7 +104,7 @@
 
   sudo systemctl is-enabled ssh
 
-- 运行 SSH 服务
+- 设置服务权限免密码登录
   
   ```sh
   # 添加 sudoers 文件的写权限
@@ -125,9 +125,10 @@
   wsl.exe -u androllen sudo service ssh start
   ```
 
+- 保存 [startWSL.vbs][wslvbs_id]
+
   ```sh
   # cd %AppData%\Microsoft\Windows\Start Menu\Programs\Startup or Win + R -> shell:startup
-  # save startWSL.vbs
   set ws=wscript.createobject("wscript.shell")
   cmd = "C:\Windows\System32\bash.exe -c 'sudo /usr/sbin/service ssh start'"
   ws.run cmd,0
@@ -150,7 +151,6 @@
 ## 相关连接
 
 [开启ssh服务](https://www.cnblogs.com/seekwind/p/10256262.html)  
-[Xshell通过ssh连接Linux](https://www.cnblogs.com/ACDIV/p/9047825.html)
 
 [wslvbs_id]: Assets/startWSL.vbs
 [taskvbs_id]: Assets/AutoService.xml
