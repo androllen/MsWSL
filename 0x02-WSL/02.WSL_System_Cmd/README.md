@@ -1,4 +1,6 @@
-# Linux & Windows 系统命令
+---
+title: Linux & Windows 系统命令  
+---
 
 - 帮助
   - Linux
@@ -245,6 +247,10 @@
     apt-get install package_name
     # 安装 deb 包
     dpkg -i package_name.deb
+
+    sudo apt install ./test.deb
+    sudo apt install gdebi
+    sudo gdebi teamviewer_amd64.deb
     ```
 
 - 卸载
@@ -300,14 +306,6 @@
       ```bash
       certutil -hashfile D:\1.exe SHA256
       ```
-
-- 安装文件
-
-  ``` bash
-  sudo apt install ./test.deb
-  sudo apt install gdebi / sudo gdebi teamviewer_amd64.deb
-  sudo dpkg -i test.deb
-  ```
 
 - 退出
 
