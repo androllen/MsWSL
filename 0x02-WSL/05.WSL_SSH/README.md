@@ -75,7 +75,7 @@
   ```
 
   找到带有 `#force_color_prompt=yes` 去掉 `#`  
-  找到下面含有 `if [ "$color_prompt" = yes ]; then` 前面加 `#`
+  找到下面含有 `if [ "$color_prompt" = yes ]; then`
 
   ``` sh
   # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
