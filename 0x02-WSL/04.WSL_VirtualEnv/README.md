@@ -18,6 +18,8 @@ title: Linux 虚拟环境
   deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
   deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
   deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+
+  esc / shift + ZZ
   ```
 
 - 更新：
