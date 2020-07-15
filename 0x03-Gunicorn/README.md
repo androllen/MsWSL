@@ -78,14 +78,13 @@
     stderr_capture_maxbytes=1MB
     stdout_logfile=/var/log/supervisor/higunicorn_out.log
     stderr_logfile=/var/log/supervisor/higunicorn_err.log
-
     ```
 
   - 使用pipenv
 
     ``` bash
-        sudo find -type f -mount -name gunicorn
-        /home/androllen/.local/share/virtualenvs/hiflask-sYW1TGXP/bin/gunicorn
+    sudo find -type f -mount -name gunicorn
+    /home/androllen/.local/share/virtualenvs/hiflask-sYW1TGXP/bin/gunicorn
     ```  
 
     ``` bash

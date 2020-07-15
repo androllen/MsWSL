@@ -104,7 +104,7 @@ title: Supervisor
 
   ```sh
   cd /etc/supervisor/conf.d
-  sudo vi todotest.conf
+  sudo vim todotest.conf
   ```
 
   ``` bash
