@@ -2,6 +2,10 @@
 title: Windows10子系统Ubuntu使用 SSH 登陆
 ---
 
+- 重新安装
+
+  sudo apt install openssh-server
+
 - 切换到ssh配置文件的位置
 
   cd /etc/ssh

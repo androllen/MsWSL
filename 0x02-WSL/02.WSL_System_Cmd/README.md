@@ -192,12 +192,13 @@ title: Linux & Windows 系统命令
   - Linux
 
     ``` bash
-    在删除用户之前切换到root
-    ubuntu删除用户同样是在终端下操作的，需要注意的是，如果要删除的用户当前已登陆，是删除不掉的，必须注销掉当前用户切换为另一个用户下，才能删除。举个     例子，刚才我新建立了一个用户为 yang 的用户，例如我现在用用户 yang 登陆了桌面，此时如果我想删除 yang 这个用户，是删除不掉的。正确的操作方法是，     我注销掉yang，然后使用 root 登陆到桌面，再删除 yang 即可。
-    删除ubuntu用户的命令比较容易记：sudo userdel username，例如我想删除 yang ，则输入：sudo userdel yang，删除成功后，系统无任何提示。
-    - userdel  -r  用户名
-    - useradd -m -s  用户名
-    - passwd 用户名
+    # 在删除用户之前切换到root
+    # ubuntu删除用户同样是在终端下操作的，需要注意的是，如果要删除的用户当前已登陆，是删除不掉的，必须注销掉当前用户切换为另一个用户下，才能删除。
+    # 举个例子，刚才我新建立了一个用户为 yang 的用户，例如我现在用用户 yang 登陆了桌面，此时如果我想删除 yang 这个用户，是删除不掉的。正确的操作方法是，我注销掉yang，然后使用 root 登陆到桌面，再删除 yang 即可。
+    # 删除ubuntu用户的命令比较容易记：sudo userdel username，例如我想删除 yang ，则输入：sudo userdel yang，删除成功后，系统无任何提示。
+    - userdel  -r  dogs
+    - useradd -m -s  dogs
+    - passwd dogs
     sudo adduser androllen
     ls /home
     ```
@@ -525,6 +526,15 @@ title: Linux & Windows 系统命令
   bash ./run.sh
   # or
   sh ./run.sh
+  ```
+
+- 查看更多信息
+
+  ```sh
+  # 屏中信息量大，一屏或几屏显示不全
+  # 支持上下翻页
+  ifconfig | more
+  iffonfig > a.txt
   ```
 
 | apt 命令         | 取代的命令                | 命令的功能                           |

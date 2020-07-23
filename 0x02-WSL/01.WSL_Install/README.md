@@ -44,3 +44,12 @@ title: 安装WSL
 ## 彩蛋
 
 wslfetch
+
+## 问题
+
+linux exception Emask  
+SAct SErr action frozen failed command read fpdma queued  
+ata3 status DRDY
+
+解决方法：  
+replaced 18.04 to 16.06
