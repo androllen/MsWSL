@@ -454,20 +454,20 @@ title: Linux & Windows 系统命令
   - Linux
 
     ``` sh
-    # 压缩并移除源文件
-    gzip filename.md
-    gunzip filename.md.gz
-    # 压缩并移除源文件
-    bzip2 filename.md
-    bunzip2 filename.md.bz2
+    # tar格式 tar是打包，不是压缩！
+    解包：$ sudo tar xvf FileName.tar
+    打包：$ sudo tar cvf FileName.tar DirName
+
+    # tar.gz格式
+    解压：$ sudo tar zxvf FileName.tar.gz
+    压缩：$ sudo tar zcvf FileName.tar.gz DirName
+
     # 压缩单文件 /指定的目录下压缩  /压缩目录下的文件
     tar -cvf /home/filename.tar /home/filename
     # 多文件
     tar -cvf /home/filename.tar /home/filename /home/DirectoryName
     # 显示包里包含的文件
     tar -tf archive.tar
-    # 解压一个gzip格式的压缩包
-    tar -zxvf archive.tar.gz
     ```
 
   - Win
@@ -528,6 +528,21 @@ title: Linux & Windows 系统命令
   sh ./run.sh
   ```
 
+- 同步
+
+```sh
+# 同步本地文件到远程服务器
+$ sudo rsync -av ./laozhi.tar.gz androllen@192.168.100.84:/home/androllen
+# 远程服务器文件夹bak 同步到本地(会新建一个bak文件夹)
+cd /opt
+$ sudo rsync -av dogs@192.168.100.50:/home/dogs/env/bak ./
+
+# 末尾不加/，表示的是将src这个目录直接复制到文件夹下，如果dst目录下没有src，会自动创建src目录
+$ sudo rsync -avzh --progress /apkg/backup/src /apkg/backup/dst
+# 末尾加/，表示的是将src目录下的内容复制到dst2文件夹下
+$ sudo rsync -avzh --progress /apkg/backup/src/ /apkg/backup/dst2
+```
+
 - 查看更多信息
 
   ```sh
@@ -552,3 +567,11 @@ title: Linux & Windows 系统命令
 | apt edit-sources |                           | 编辑源列表                           |
 
 [DOS下文件/文件夹操作](http://www.elecfans.com/baike/wangluo/anfang/20180117617630_2.html)
+
+- 移除进程
+
+```sh
+ps -ef|grep tomcat
+kill -9 pid
+rm -rf
+```
