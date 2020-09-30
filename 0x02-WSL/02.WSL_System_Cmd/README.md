@@ -454,7 +454,7 @@ title: Linux & Windows 系统命令
   - Linux
 
     ``` sh
-    # tar格式 tar是打包，不是压缩！
+    # tar格式 tar是打包，不是压缩！compression 压缩 首字母 c
     解包：$ sudo tar xvf FileName.tar
     打包：$ sudo tar cvf FileName.tar DirName
 
@@ -474,6 +474,31 @@ title: Linux & Windows 系统命令
 
     ``` sh
     7.zip
+    ```
+
+- Linux
+  - 管道符号
+
+    ```sh
+    docker images |awk '{print $1}' |sed -n '2,$p' |xargs docker save -o zhao.tar
+    ```
+
+  - awk
+  
+    ```sh
+    awk '{print $1}' 
+    ```
+
+  - [sed](https://blog.csdn.net/wdz306ling/article/details/80087889)
+    
+    ```sh
+    sed -n '2,$p' 
+    ```
+
+  - xargs
+    
+    ```sh
+    xargs docker save -o zhaobsh.tar 
     ```
 
 - 文件格式转换
