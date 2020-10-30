@@ -108,9 +108,11 @@ title: Linux & Windows 系统命令
     ``` bash
     # 强制删除非空文件夹
     # 管理员权限的时候使用
-    rmdir + foo /s /q
+    rmdir /s /q your_folder_path
 
-    rd + foo /s /q
+    rd /s /q your_folder_path
+    # 批量删除指定文件夹(yarn---16038696142)
+    for /D %f in (yarn*) do @rmdir %f /Q /S   
     ```
 
   - Linux
