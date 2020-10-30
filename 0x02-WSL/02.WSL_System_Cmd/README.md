@@ -106,14 +106,15 @@ title: Linux & Windows 系统命令
   - Win
 
     ``` bash
-    # 强制删除非空文件夹
-    # 管理员权限的时候使用
+    # 强制删除非空文件夹管理员权限的时候使用
     rmdir /s /q your_folder_path
-
+    # 
     rd /s /q your_folder_path
     # 批量删除指定文件夹(yarn---16038696142)
     cd /d "%userprofile%\Local Settings\Temp"
     for /d %%D in (yarn--*) do rd /s /q "%%D"
+    # 批量删除全部文件夹
+    for /d %%D in (*) do rd /s /q "%%D"
     ```
 
   - Linux
