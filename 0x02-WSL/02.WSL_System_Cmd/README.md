@@ -112,7 +112,8 @@ title: Linux & Windows 系统命令
 
     rd /s /q your_folder_path
     # 批量删除指定文件夹(yarn---16038696142)
-    for /D %f in (yarn*) do @rmdir %f /Q /S   
+    cd /d "%userprofile%\Local Settings\Temp"
+    for /d %%D in (yarn--*) do rd /s /q "%%D"
     ```
 
   - Linux
