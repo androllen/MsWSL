@@ -2,7 +2,7 @@
 title: Linux 虚拟环境 
 ---
 
-- 编辑
+- 国内源 24.04 以前
 
   ```sh
   sudo cp /etc/apt/sources.list /etc/apt/sources.list.old
@@ -20,6 +20,25 @@ title: Linux 虚拟环境
   deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
 
   esc / shift + ZZ
+  ```
+
+- 国内源 24.04以后
+
+  https://developer.aliyun.com/mirror/ubuntu?spm=a2c6h.13651102.0.0.3e221b11UjP74m
+
+  ```sh
+  Types: deb
+  URIs: https://mirrors.aliyun.com/ubuntu
+  Suites: noble noble-updates noble-backports
+  Components: main universe restricted multiverse
+  Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+  
+  Types: deb
+  URIs: https://mirrors.aliyun.com/ubuntu
+  Suites: noble-security
+  Components: main universe restricted multiverse
+  Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+  
   ```
 
 - 更新：
