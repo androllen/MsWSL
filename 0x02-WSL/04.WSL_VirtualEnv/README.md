@@ -138,7 +138,19 @@ title: Linux 虚拟环境
   ```
   source ~/.bashrc
 
-  输入 python --version和 pip --version，如果显示的是 Python 3 和 pip3 的版本信息，说明设置成功
+  输入 python --version和 pip --version，如果显示的是 Python 3 和 pip3 的版本信息，# 1. 先安装 pipx
+
+  ```sh
+  sudo apt install pipx
+  
+  # 2. 确保 pipx 在 PATH 中
+  pipx ensurepath
+  # 可能需要重新启动终端或执行：source ~/.bashrc
+  
+  # 3. 用 pipx 安装 uv
+  pipx install uv说明设置成功
+
+  ```
   
 
 - 卸载 Python2.7
