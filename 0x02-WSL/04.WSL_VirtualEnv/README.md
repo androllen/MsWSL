@@ -78,20 +78,15 @@ title: Linux 虚拟环境
   ```sh
   cd /home/androllen
   sudo wget https://bootstrap.pypa.io/get-pip.py
-  # 多试几次
-  sudo python3 get-pip.py
   or
-  # 可能无效
   sudo apt install python3-pip
-  # 查看现有安装的python
-  whereis python3
-  or
-  sudo find / -type f -mount -name pip3
 
   pip3 -V
   pip -V
   pip3 list
   ```
+- 查看现有安装的python
+  whereis python3
 
 - 更换 PIP 源
 
@@ -132,28 +127,19 @@ title: Linux 虚拟环境
     pip.ini
     ```
 
-- 设置 python 默认版本为 python3
+- 设置 python3为别名
 
+  /home/你的用户名/.bashrc
+  vim ~/.bashrc
+  
   ```sh
-  sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
-  update-alternatives: using /usr/bin/python3.7 to provide /usr/bin/python (python) in auto mode
-
-  androllen@DESKTOP-4QBCHIN:/usr/bin$ python
-  Python 3.7.5 (default, Nov  7 2019, 10:50:52)
-  [GCC 8.3.0] on linux
-  Type "help", "copyright", "credits" or "license" for more information.
-  >>>
-
-  # 设置快捷方式 py3
-  sudo update-alternatives --install /usr/bin/py3 python /usr/bin/python3.7 150
-  update-alternatives: renaming python link from /usr/bin/python to /usr/bin/py3
-
-  androllen@DESKTOP-4QBCHIN:/usr/bin$ py3
-  Python 3.7.5 (default, Nov  7 2019, 10:50:52)
-  [GCC 8.3.0] on linux
-  Type "help", "copyright", "credits" or "license" for more information.
-  >>>
+  alias python='python3'
+  alias pip='pip3'
   ```
+  source ~/.bashrc
+
+  输入 python --version和 pip --version，如果显示的是 Python 3 和 pip3 的版本信息，说明设置成功
+  
 
 - 卸载 Python2.7
 
