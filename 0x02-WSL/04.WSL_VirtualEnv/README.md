@@ -149,9 +149,20 @@ title: Linux 虚拟环境
   
   # 3. 用 pipx 安装 uv
   pipx install uv说明设置成功
-
   ```
   
+- 创建虚拟环境
+  ```sh
+  python3 -m venv .venv
+  source .venv/bin/activate
+  pip install uv
+  ```
+
+- 激活虚拟环境 安装依赖
+  ```sh
+  source .venv/bin/activate
+  pip install uv
+  ```
 
 - 卸载 Python2.7
 
