@@ -140,29 +140,72 @@ title: Linux 虚拟环境
 
   输入 python --version和 pip --version，如果显示的是 Python 3 和 pip3 的版本信息，# 1. 先安装 pipx
 
+- 安装pipx
   ```sh
   sudo apt install pipx
   
   # 2. 确保 pipx 在 PATH 中
   pipx ensurepath
   # 可能需要重新启动终端或执行：source ~/.bashrc
-  
-  # 3. 用 pipx 安装 uv
-  pipx install uv说明设置成功
   ```
+  
+  
   
 - 创建虚拟环境
   ```sh
   python3 -m venv .venv
-  source .venv/bin/activate
-  pip install uv
   ```
 
-- 激活虚拟环境 安装依赖
+- 激活虚拟环境
   ```sh
   source .venv/bin/activate
-  pip install uv
   ```
+
+- 安装 uv
+  ```sh
+  pip install uv
+  # 初始化项目（这会在当前目录创建项目文件）
+  uv init
+  # 添加生产依赖
+  uv add requests
+  
+  # 添加开发依赖
+  uv add --dev pytest black
+  
+  # 查看已安装的包
+  uv pip list
+  ```
+
+  ```sh
+  # 安装 pyproject.toml 中定义的所有依赖
+  uv sync
+  
+  # 强制重新同步（清空后重新安装）
+  uv sync --reinstall
+  # 管理依赖
+  uv add <package>            # 添加包并记录
+  uv remove <package>         # 移除包
+  uv update                   # 更新所有包
+  
+  # 环境管理
+  uv venv                     # 创建虚拟环境
+  uv sync                     # 同步依赖
+  uv pip install <package>    # 临时安装（不记录）
+  
+  # 项目工具
+  uv run <command>           # 在项目环境中运行命令
+  uv build                   # 构建项目包
+  uv publish                 # 发布到 PyPI
+
+  # 创建配置文件
+  mkdir -p ~/.config/uv
+  sudo vim ~/.config/uv/uv.toml
+  
+  # 添加以下内容（以清华源为例）
+  [index]
+  url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+  ```
+  
 
 - 卸载 Python2.7
 
