@@ -197,6 +197,7 @@ title: Linux 虚拟环境
   uv build                   # 构建项目包
   uv publish                 # 发布到 PyPI
 
+  
   # 创建配置文件
   mkdir -p ~/.config/uv
   sudo vim ~/.config/uv/uv.toml
@@ -204,6 +205,27 @@ title: Linux 虚拟环境
   # 添加以下内容（以清华源为例）
   [index]
   url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+  
+  or
+  sudo vim ~/.bashrc
+  # 设置默认镜像源 (以清华大学镜像源为例)
+  export UV_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+  
+  # 如果你需要添加多个镜像源作为备用
+  # export UV_EXTRA_INDEX_URL="https://mirrors.aliyun.com/pypi/simple/"
+  
+  # 方式 A：直接指定 URL
+  uv pip install numpy --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+  
+  # 方式 B：如果你想保留官方源作为备用（防止某些包只在官方有）
+  uv pip install numpy --default-index https://pypi.tuna.tsinghua.edu.cn/simple
+
+  pyproject.toml 共享团队
+  [tool.uv]
+  index-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+  # 或者添加额外源
+  extra-index-url = ["https://mirrors.aliyun.com/pypi/simple/"]
+
   ```
   
 
