@@ -171,9 +171,32 @@ title: Linux 虚拟环境
   
   # 添加开发依赖
   uv add --dev pytest black
+
+  # 查看一般详细信息
+  uv add requests -v
+  
+  # 查看更详细信息
+  uv add requests -vv
+  
+  # 更安全地，删除特定包的缓存
+  uv cache remove requests
   
   # 查看已安装的包
   uv pip list
+  ```
+
+  ```sh 示例
+  androllen@user:~$ pipx install uv
+  androllen@user:~$ uv --version
+  androllen@user:~$ cd pyDemo/
+  androllen@user:~/pyDemo$ uv init
+  androllen@user:~/pyDemo$ uv venv
+  androllen@user:~/pyDemo$ source .venv/bin/activate
+  (pyDemo) androllen@user:~/pyDemo$ uv sync
+  python -c "import fastapi, PyPDF2; print('依赖导入成功')"
+  (pyDemo) androllen@ISSUR:~/pyDemo$ which python
+  /home/androllen/pyDemo/.venv/bin/python
+  (pyDemo) androllen@ISSUR:~/pyDemo$ uv add sqlalchemy
   ```
 
   ```sh
@@ -221,10 +244,7 @@ title: Linux 虚拟环境
   uv pip install numpy --default-index https://pypi.tuna.tsinghua.edu.cn/simple
 
   pyproject.toml 共享团队
-  [tool.uv]
-  index-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-  # 或者添加额外源
-  extra-index-url = ["https://mirrors.aliyun.com/pypi/simple/"]
+
 
   ```
   
