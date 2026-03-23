@@ -47,11 +47,6 @@ title: Linux 虚拟环境
   sudo apt-get update
   ```
 
-- 检查
-
-  ```sh
-  python3 --version
-  ```
 
 - 安装其他版本 python3
 
@@ -85,6 +80,7 @@ title: Linux 虚拟环境
   pip -V
   pip3 list
   ```
+  
 - 查看现有安装的python
   whereis python3
 
@@ -107,10 +103,16 @@ title: Linux 虚拟环境
     修改 ~/.pip/pip.conf (没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹)内容如下：
 
     ```sh
+
     [global]
-    index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+    index-url = https://mirrors.aliyun.com/pypi/simple
     [install]
-    trusted-host=mirrors.aliyun.com
+    trusted-host=
+            mirrors.aliyun.com
+            pypi.tuna.tsinghua.edu.cn
+            pypi.mirrors.ustc.edu.cn
+            download.openmmlab.com
+        
     ```
 
   - windows
@@ -138,7 +140,7 @@ title: Linux 虚拟环境
   ```
   source ~/.bashrc
 
-  输入 python --version和 pip --version，如果显示的是 Python 3 和 pip3 的版本信息，# 1. 先安装 pipx
+  输入 python --version 和 pip --version，如果显示的是 Python 3 和 pip3 的版本信息， 先安装 pipx
 
 - 安装pipx
   ```sh
@@ -219,32 +221,30 @@ title: Linux 虚拟环境
   uv run <command>           # 在项目环境中运行命令
   uv build                   # 构建项目包
   uv publish                 # 发布到 PyPI
+  ```
 
-  
-  # 创建配置文件
-  mkdir -p ~/.config/uv
-  sudo vim ~/.config/uv/uv.toml
-  
-  # 添加以下内容（以清华源为例）
-  [index]
-  url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-  
-  or
-  sudo vim ~/.bashrc
-  # 设置默认镜像源 (以清华大学镜像源为例)
-  export UV_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
-  
-  # 如果你需要添加多个镜像源作为备用
-  # export UV_EXTRA_INDEX_URL="https://mirrors.aliyun.com/pypi/simple/"
-  
+
+  ```bash
+  # 查看或设置你的 Python 工具链版本
+  uv python list
+  ``` 
+
+
+  ```bash
+  # 创建配置文件 `pyproject.toml`
+  [[tool.uv.index]]
+  name = "aliyun"
+  url = "https://mirrors.aliyun.com/pypi/simple/"
+  ```
+
+  ```bash  
   # 方式 A：直接指定 URL
   uv pip install numpy --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+  ```
   
+  ```bash 
   # 方式 B：如果你想保留官方源作为备用（防止某些包只在官方有）
   uv pip install numpy --default-index https://pypi.tuna.tsinghua.edu.cn/simple
-
-  pyproject.toml 共享团队
-
 
   ```
   
