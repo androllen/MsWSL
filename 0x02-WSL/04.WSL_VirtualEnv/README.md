@@ -142,6 +142,22 @@ title: Linux 虚拟环境
 
   输入 python --version 和 pip --version，如果显示的是 Python 3 和 pip3 的版本信息， 先安装 pipx
 
+
+- .bashrc 环境变量
+  ```
+  
+  alias python='python3'
+  alias pip='pip3'
+  
+  # Created by `pipx` on 2026-03-16 11:30:35
+  export PATH="$PATH:/home/androllen/.local/bin"
+  
+  export UV_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+  export UV_EXTRA_INDEX_URL="https://mirrors.aliyun.com/pypi/simple/"
+  
+  export PATH="$HOME/.local/bin:$PATH"
+  ```
+
 - 安装pipx
   ```sh
   sudo apt install pipx
